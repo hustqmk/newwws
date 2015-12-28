@@ -79,6 +79,41 @@
     [imagebb setObject:imageName forKey:@"imageName"];
     [imagebb saveInBackground];
 }
+
+-(void) publishTextPost
+{
+    // record the error info
+    __block NSError * postError = nil;
+    __block NSUInteger maxPostID;
+    BmobQuery * query = [BmobQuery queryWithClassName:@"newsPub"];
+    [query orderByDescending:@"newsID"];
+    query.limit = 1;
+    [query findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
+        if (error) {
+            postError = error;
+        }
+        else {
+            if ([array count] == 1) {
+                BmobObject *bb = [array firstObject];
+                NSNumber *postID= [bb objectForKey:@"newsID"];
+                maxPostID = postID.integerValue;
+            }
+            else
+                maxPostID = 0;
+            
+            maxPostID++;
+            NSString * text = self.publishTextView.text;
+            // 1. save to post table
+            NSNumber * newID = [[NSNumber alloc] initWithInteger:maxPostID];
+            BmobObject * newsBB = [BmobObject objectWithClassName:@"newsPub"];
+            [newsBB setObject:newID forKey:@"newsID"];
+            [newsBB setObject:text forKey:@"text"];
+            [newsBB saveInBackground];
+            
+        }
+        NSLog(@"Task2 Done");
+    }];
+}
 -(void) publishImagePost: (NSArray *) imageDict
 {
     // record the error info
@@ -117,7 +152,8 @@
         }
         else {
             if ([array count] == 1) {
-                maxPostID = [[array firstObject] objectForKey:@"newsID"];
+                NSNumber * postID = [[array firstObject] objectForKey:@"newsID"];
+                maxPostID = postID.integerValue;
             }
             else
                 maxPostID = 0;
@@ -154,6 +190,7 @@
 {
     if ([self.chooseImages count] == 0)
     {
+        [self publishTextPost];
         // publist without picture
     }
     else
@@ -318,7 +355,7 @@
     self.chooseImageNames = imageNames;
 }
 
--(void)imagePickerControllerDidCancel:(ELCImagePickerController *)picker
+-(void)elcImagePickerControllerDidCancel:(ELCImagePickerController *)picker
 {
     [picker dismissViewControllerAnimated:YES completion:NULL];
 }

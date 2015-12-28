@@ -13,28 +13,27 @@
 @property (strong, nonatomic) IBOutletCollection(UITextField) NSArray *theNewField;
 @property (strong, nonatomic) NSMutableArray * newsData;
 @property (weak, nonatomic) IBOutlet UITableView *myNewsTableView;
-
+@property (strong, nonatomic) BmobEvent *bmobEvent;
 @end
 
-static NSString * const title = @"Main title";
-static NSString * const subTitle = @"Sub Title";
+static NSString * const NEWS_TABLE = @"newsPub";
+static NSString * const NEWS_ID = @"newsID";
+static NSString * const NEWS_TEXT = @"text";
 
 @implementation News
 
 @end
 @implementation myNewsViewController
 
-- (void)getUserInfo
+- (void)initNewsData
 {
-    BmobQuery * query = [BmobQuery queryWithClassName:@"newsPub"];
-    [query orderByDescending:@"newsID"];
-    query.limit = 20;
-    [self.newsData removeAllObjects];
+    BmobQuery * query = [BmobQuery queryWithClassName:NEWS_TABLE];
+    [query orderByDescending:NEWS_ID];
+    query.limit = 3;
     [query findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
         for (BmobObject *obj in array) {
             News * info = [[News alloc] init];
-            info.text = [obj objectForKey:@"text"];
-            //info.thumbnailName = [obj objectForKey:@"thumbnailName"];
+            info.text = [obj objectForKey:NEWS_TEXT];
             [self.newsData addObject:info];
         }
         [self.myNewsTableView reloadData];
@@ -42,19 +41,43 @@ static NSString * const subTitle = @"Sub Title";
     
 }
 
+-(void)listen{
+    //创建BmobEvent对象
+    _bmobEvent          = [BmobEvent defaultBmobEvent];
+    //设置代理
+    _bmobEvent.delegate = self;
+    //启动连接
+    [_bmobEvent start];
+}
 
+-(void)bmobEventCanStartListen:(BmobEvent *)event{
+    //监听Post表更新
+    [_bmobEvent listenTableChange:BmobActionTypeUpdateTable tableName:NEWS_TABLE];
+}
+//接收到得数据
+-(void)bmobEvent:(BmobEvent *)event didReceiveMessage:(NSString *)message{
+    //打印数据
+    NSLog(@"didReceiveMessage:%@",message);
+    
+}
+- (void) updateMyNews
+{
+    BmobQuery * query = [BmobQuery queryWithClassName:NEWS_TABLE];
+    
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self listen];
     // Do any additional setup after loading the view.
     // get user info
-    _newsData = [[NSMutableArray alloc] initWithCapacity:20];
-    [self getUserInfo];
+    _newsData = [[NSMutableArray alloc] initWithCapacity:3];
+    [self initNewsData];
     // load user data
 }
 
 -(void) viewDidAppear:(BOOL)animated
 {
-    [self getUserInfo];
+    [self updateMyNews];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
