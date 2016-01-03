@@ -7,7 +7,10 @@
 //
 
 #import "MKPost.h"
-
+#import "MKPhoto.h"
 @implementation MKPost
-
+- (NSDictionary *)objectClassInArray
+{
+    return @{@"pic_urls" :[MKPhoto class]};
+}
 @end

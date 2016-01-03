@@ -12,14 +12,15 @@
 
 @interface MKPost : NSObject
 /** Post id */
-@property (nonatomic, copy) NSString *idstr;
+@property (nonatomic, copy) NSString *post_id;
 /** 作者 */
-@property (nonatomic, strong) XXUser *user;
+@property (nonatomic, strong) NSString *user;
 /** 时间 */
 @property (nonatomic, copy) NSString *created_at;
 /** 正文 */
 @property (nonatomic, copy) NSString *text;;
 /** 配图 */
 @property (nonatomic, strong) NSArray *pic_urls;
-
+/** 缩略图 */
+@property (nonatomic, strong) NSArray *thumbpics_urls;
 @end

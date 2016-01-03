@@ -7,7 +7,15 @@
 //
 
 #import "MKPostTopView.h"
+#import "UIImageView+WebCache.h"
+#import "MKPhotosView.h"
+#import "MKPostFrame.h"
+#import "MKConst.h"
+#import "MKPost.h"
 
+
+
+@class MKPhotosView;
 @interface MKPostTopView()
 
 /** 头像 */
@@ -19,11 +27,104 @@
 /** 原创微博正文 */
 @property (nonatomic, weak) UILabel *contentLabel;
 /** 原创微博配图 */
-@property (nonatomic, weak) XXPhotosView *photosView;
+@property (nonatomic, weak) MKPhotosView *photosView;
 
 @end
 
 @implementation MKPostTopView
+
+#pragma mark - 初始化
+
+- (id)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    
+    if (self) {
+        self.userInteractionEnabled = YES;
+        
+        // 1. 头像
+        UIImageView *iconview  = [[UIImageView alloc] init];
+        [self addSubview:iconview];
+        self.iconView = iconview;
+        
+        UIButton *nameBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        nameBtn.titleLabel.font = [UIFont systemFontOfSize:MKPostNameFont];
+        [self addSubview:nameBtn];
+        self.nameBtn = nameBtn;
+        
+        // 4. 时间
+        UILabel *timeLabel = [[UILabel alloc] init];
+        timeLabel.font = [UIFont systemFontOfSize:MKPostTimeFont];
+        timeLabel.textColor = MKColor(135, 135, 135);
+        [self addSubview:timeLabel];
+        self.timeLabel = timeLabel;
+        
+        // 6. 正文
+        UILabel *contentLabel = [[UILabel alloc] init];
+        contentLabel.font = [UIFont systemFontOfSize:MKPostContentFont];
+        contentLabel.textColor = MKColor(35, 35, 35);
+        contentLabel.numberOfLines = 0;
+        [self addSubview:contentLabel];
+        self.contentLabel = contentLabel;
+        
+        MKPhotosView *photosView = [[MKPhotosView alloc] init];
+        [self addSubview:photosView];
+        self.photosView = photosView;
+    }
+    
+    return self;
+}
+
+
+#pragma mark - 设置数据
+-(void)setPostFrame:(MKPostFrame *)postFrame
+{
+    _postFrame = postFrame;
+    
+    MKPost * post = postFrame.post;
+    
+    // set user header image
+    
+    // nike name
+    [self.nameBtn setTitle:post.user forState:UIControlStateNormal];
+    self.iconView.frame = postFrame.nameBtnF;
+    
+    // time
+    self.timeLabel.text = post.created_at;
+    CGFloat timeX = self.postFrame.nameBtnF.origin.x;
+    CGFloat timeY = CGRectGetMaxY(self.postFrame.nameBtnF) + MKPostPadding * 0.5;
+    CGSize timeSize = [post.created_at sizeWithFont:[UIFont systemFontOfSize:MKPostTimeFont]];
+    self.timeLabel.frame = (CGRect){timeX, timeY, timeSize};
+    
+    // CONTENT
+    self.contentLabel.text = post.text;
+    self.contentLabel.frame = postFrame.contentLabelF;
+    
+    if (post.thumbpics_urls.count) {
+        self.photosView.hidden = NO;
+        self.photosView.photos = post.thumbpics_urls;
+        self.photosView.frame = postFrame.photoViewF;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 @end

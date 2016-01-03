@@ -9,7 +9,7 @@
 // 定义Post frame的内部框架
 
 #import <Foundation/Foundation.h>
-
+#import <CoreGraphics/CGGeometry.h>
 // 间距
 #define MKPostPadding 10
 // 昵称字体
@@ -44,6 +44,6 @@
 /** cell的高度 */
 @property (nonatomic, assign, readonly) CGFloat cellHeight;
 
-@property (nonatomic, strong) MKPost *status;
+@property (nonatomic, strong) MKPost *post;
 
 @end

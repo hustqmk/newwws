@@ -7,15 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DF1231881C1EFFC7003AD09C /* BmobSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF1231871C1EFFC7003AD09C /* BmobSDK.framework */; };
-		DF2CB5EB1C317ACB00F837DB /* bmobOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2CB5E81C317ACB00F837DB /* bmobOperation.m */; };
-		DF2CB5EC1C317ACB00F837DB /* utility.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2CB5EA1C317ACB00F837DB /* utility.m */; };
-		DF2CB5EE1C317AE300F837DB /* BmobSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF2CB5ED1C317AE300F837DB /* BmobSDK.framework */; };
-		DF587F321B2B00FA009AB71A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF587F301B2B00FA009AB71A /* Main.storyboard */; };
-		DF587F371B2B00FA009AB71A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF587F351B2B00FA009AB71A /* LaunchScreen.xib */; };
-		DF587F431B2B00FA009AB71A /* NewwwsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DF587F421B2B00FA009AB71A /* NewwwsTests.m */; };
+		DF3A49501C32C5B900EC0600 /* libz.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DF3A494F1C32C5B900EC0600 /* libz.1.dylib */; };
+		DF3A49521C32C60E00EC0600 /* libicucore.A.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DF3A49511C32C60E00EC0600 /* libicucore.A.dylib */; };
+		DF3A49541C32C62C00EC0600 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DF3A49531C32C62C00EC0600 /* libsqlite3.dylib */; };
+		DF3A49571C32D3E000EC0600 /* MKPhotosView.m in Sources */ = {isa = PBXBuildFile; fileRef = DF3A49561C32D3E000EC0600 /* MKPhotosView.m */; };
 		DF6F06BF1C26A2AE007D027F /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF6F06BE1C26A2AE007D027F /* AssetsLibrary.framework */; };
-		DF7AF4971B83641200E6C96E /* utility.m in Sources */ = {isa = PBXBuildFile; fileRef = DF7AF4961B83641200E6C96E /* utility.m */; };
 		DF81C4651C317C8B00A5016D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DF81C4601C317C8B00A5016D /* AppDelegate.m */; };
 		DF81C4661C317C8B00A5016D /* images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF81C4611C317C8B00A5016D /* images.xcassets */; };
 		DF81C4671C317C8B00A5016D /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DF81C4621C317C8B00A5016D /* Info.plist */; };
@@ -68,6 +64,22 @@
 		DF81C4F91C317F3400A5016D /* AffairViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF81C4F61C317F3400A5016D /* AffairViewController.m */; };
 		DF81C5011C317F4700A5016D /* loginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF81C4FC1C317F4700A5016D /* loginViewController.m */; };
 		DF81C5021C317F4700A5016D /* registerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF81C4FE1C317F4700A5016D /* registerViewController.m */; };
+		DF81C5041C3184A000A5016D /* BmobSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF81C5031C3184A000A5016D /* BmobSDK.framework */; };
+		DF81C5091C3184FA00A5016D /* bmobOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = DF81C5061C3184FA00A5016D /* bmobOperation.m */; };
+		DF81C50A1C3184FA00A5016D /* utility.m in Sources */ = {isa = PBXBuildFile; fileRef = DF81C5081C3184FA00A5016D /* utility.m */; };
+		DF81C50C1C31851F00A5016D /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DF81C50B1C31851F00A5016D /* Default-568h@2x.png */; };
+		DF81C50E1C31860900A5016D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF81C50D1C31860900A5016D /* Main.storyboard */; };
+		DF81C5111C318D1F00A5016D /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF6F06BE1C26A2AE007D027F /* AssetsLibrary.framework */; };
+		DF81C5121C318D2700A5016D /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFEF2F781B75AA1D006342C9 /* MediaPlayer.framework */; };
+		DF81C5131C318D2E00A5016D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFEF2F761B75AA13006342C9 /* AVFoundation.framework */; };
+		DF81C5141C318D3800A5016D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFEF2F6E1B75A9E2006342C9 /* SystemConfiguration.framework */; };
+		DF81C5151C318D3E00A5016D /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFEF2F6C1B75A9D8006342C9 /* CoreTelephony.framework */; };
+		DF81C5161C318D4800A5016D /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFEF2F6A1B75A9CE006342C9 /* CFNetwork.framework */; };
+		DF81C5171C318D4E00A5016D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFEF2F661B75A9B6006342C9 /* CoreGraphics.framework */; };
+		DF81C5181C318D5600A5016D /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFEF2F641B75A9AA006342C9 /* Security.framework */; };
+		DF81C5191C318D5E00A5016D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFEF2F621B75A9A0006342C9 /* CoreLocation.framework */; };
+		DF81C51A1C318D6D00A5016D /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFEF2F681B75A9C3006342C9 /* MobileCoreServices.framework */; };
+		DFE6C7D51C390C2800C4683E /* MKPostCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DFE6C7D41C390C2800C4683E /* MKPostCell.m */; };
 		DFEF2F631B75A9A0006342C9 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFEF2F621B75A9A0006342C9 /* CoreLocation.framework */; };
 		DFEF2F651B75A9AA006342C9 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFEF2F641B75A9AA006342C9 /* Security.framework */; };
 		DFEF2F671B75A9B6006342C9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFEF2F661B75A9B6006342C9 /* CoreGraphics.framework */; };
@@ -75,9 +87,6 @@
 		DFEF2F6B1B75A9CE006342C9 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFEF2F6A1B75A9CE006342C9 /* CFNetwork.framework */; };
 		DFEF2F6D1B75A9D8006342C9 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFEF2F6C1B75A9D8006342C9 /* CoreTelephony.framework */; };
 		DFEF2F6F1B75A9E2006342C9 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFEF2F6E1B75A9E2006342C9 /* SystemConfiguration.framework */; };
-		DFEF2F711B75A9EA006342C9 /* libz.1.2.5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DFEF2F701B75A9EA006342C9 /* libz.1.2.5.dylib */; };
-		DFEF2F731B75A9F4006342C9 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DFEF2F721B75A9F4006342C9 /* libicucore.dylib */; };
-		DFEF2F751B75AA0B006342C9 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DFEF2F741B75AA0B006342C9 /* libsqlite3.dylib */; };
 		DFEF2F771B75AA13006342C9 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFEF2F761B75AA13006342C9 /* AVFoundation.framework */; };
 		DFEF2F791B75AA1D006342C9 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFEF2F781B75AA1D006342C9 /* MediaPlayer.framework */; };
 /* End PBXBuildFile section */
@@ -93,21 +102,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		DF1231871C1EFFC7003AD09C /* BmobSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BmobSDK.framework; path = firstAP/BmobSDK.framework; sourceTree = "<group>"; };
-		DF2CB5E71C317ACB00F837DB /* bmobOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = bmobOperation.h; path = tools/bmobOperation.h; sourceTree = "<group>"; };
-		DF2CB5E81C317ACB00F837DB /* bmobOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = bmobOperation.m; path = tools/bmobOperation.m; sourceTree = "<group>"; };
-		DF2CB5E91C317ACB00F837DB /* utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = utility.h; path = tools/utility.h; sourceTree = "<group>"; };
-		DF2CB5EA1C317ACB00F837DB /* utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = utility.m; path = tools/utility.m; sourceTree = "<group>"; };
-		DF2CB5ED1C317AE300F837DB /* BmobSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BmobSDK.framework; path = firstAP/Framework/BmobSDK.framework; sourceTree = "<group>"; };
+		DF3A494F1C32C5B900EC0600 /* libz.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.dylib; path = ../../../../usr/lib/libz.1.dylib; sourceTree = "<group>"; };
+		DF3A49511C32C60E00EC0600 /* libicucore.A.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.A.dylib; path = ../../../../usr/lib/libicucore.A.dylib; sourceTree = "<group>"; };
+		DF3A49531C32C62C00EC0600 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = ../../../../usr/lib/libsqlite3.dylib; sourceTree = "<group>"; };
+		DF3A49551C32D3E000EC0600 /* MKPhotosView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKPhotosView.h; sourceTree = "<group>"; };
+		DF3A49561C32D3E000EC0600 /* MKPhotosView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKPhotosView.m; sourceTree = "<group>"; };
 		DF587F231B2B00FA009AB71A /* Newwws.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Newwws.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		DF587F311B2B00FA009AB71A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		DF587F361B2B00FA009AB71A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		DF587F3C1B2B00FA009AB71A /* Newwws.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Newwws.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DF587F411B2B00FA009AB71A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DF587F421B2B00FA009AB71A /* NewwwsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewwwsTests.m; sourceTree = "<group>"; };
 		DF6F06BE1C26A2AE007D027F /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
-		DF7AF4951B83641200E6C96E /* utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = utility.h; sourceTree = "<group>"; };
-		DF7AF4961B83641200E6C96E /* utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = utility.m; sourceTree = "<group>"; };
 		DF81C45F1C317C8B00A5016D /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Newwws/Supporting/AppDelegate.h; sourceTree = SOURCE_ROOT; };
 		DF81C4601C317C8B00A5016D /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Newwws/Supporting/AppDelegate.m; sourceTree = SOURCE_ROOT; };
 		DF81C4611C317C8B00A5016D /* images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = images.xcassets; path = Newwws/Supporting/images.xcassets; sourceTree = SOURCE_ROOT; };
@@ -207,6 +209,16 @@
 		DF81C4FC1C317F4700A5016D /* loginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = loginViewController.m; sourceTree = "<group>"; };
 		DF81C4FD1C317F4700A5016D /* registerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = registerViewController.h; sourceTree = "<group>"; };
 		DF81C4FE1C317F4700A5016D /* registerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = registerViewController.m; sourceTree = "<group>"; };
+		DF81C5031C3184A000A5016D /* BmobSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BmobSDK.framework; path = Newwws/Framework/BmobSDK.framework; sourceTree = "<group>"; };
+		DF81C5051C3184FA00A5016D /* bmobOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = bmobOperation.h; path = Newwws/tools/bmobOperation.h; sourceTree = SOURCE_ROOT; };
+		DF81C5061C3184FA00A5016D /* bmobOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = bmobOperation.m; path = Newwws/tools/bmobOperation.m; sourceTree = SOURCE_ROOT; };
+		DF81C5071C3184FA00A5016D /* utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = utility.h; path = Newwws/tools/utility.h; sourceTree = SOURCE_ROOT; };
+		DF81C5081C3184FA00A5016D /* utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = utility.m; path = Newwws/tools/utility.m; sourceTree = SOURCE_ROOT; };
+		DF81C50B1C31851F00A5016D /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		DF81C50D1C31860900A5016D /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = SOURCE_ROOT; };
+		DFE6C7D21C38BDAF00C4683E /* MKConst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MKConst.h; path = Newwws/other/MKConst.h; sourceTree = SOURCE_ROOT; };
+		DFE6C7D31C390C2800C4683E /* MKPostCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKPostCell.h; sourceTree = "<group>"; };
+		DFE6C7D41C390C2800C4683E /* MKPostCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKPostCell.m; sourceTree = "<group>"; };
 		DFEF2F621B75A9A0006342C9 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		DFEF2F641B75A9AA006342C9 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		DFEF2F661B75A9B6006342C9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -214,9 +226,6 @@
 		DFEF2F6A1B75A9CE006342C9 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		DFEF2F6C1B75A9D8006342C9 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		DFEF2F6E1B75A9E2006342C9 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		DFEF2F701B75A9EA006342C9 /* libz.1.2.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.5.dylib; path = usr/lib/libz.1.2.5.dylib; sourceTree = SDKROOT; };
-		DFEF2F721B75A9F4006342C9 /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
-		DFEF2F741B75AA0B006342C9 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		DFEF2F761B75AA13006342C9 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		DFEF2F781B75AA1D006342C9 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -226,21 +235,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF3A49541C32C62C00EC0600 /* libsqlite3.dylib in Frameworks */,
+				DF3A49521C32C60E00EC0600 /* libicucore.A.dylib in Frameworks */,
+				DF3A49501C32C5B900EC0600 /* libz.1.dylib in Frameworks */,
 				DF6F06BF1C26A2AE007D027F /* AssetsLibrary.framework in Frameworks */,
 				DFEF2F791B75AA1D006342C9 /* MediaPlayer.framework in Frameworks */,
 				DFEF2F771B75AA13006342C9 /* AVFoundation.framework in Frameworks */,
-				DFEF2F751B75AA0B006342C9 /* libsqlite3.dylib in Frameworks */,
-				DF2CB5EE1C317AE300F837DB /* BmobSDK.framework in Frameworks */,
-				DFEF2F731B75A9F4006342C9 /* libicucore.dylib in Frameworks */,
-				DFEF2F711B75A9EA006342C9 /* libz.1.2.5.dylib in Frameworks */,
 				DFEF2F6F1B75A9E2006342C9 /* SystemConfiguration.framework in Frameworks */,
-				DF1231881C1EFFC7003AD09C /* BmobSDK.framework in Frameworks */,
 				DFEF2F6D1B75A9D8006342C9 /* CoreTelephony.framework in Frameworks */,
 				DFEF2F6B1B75A9CE006342C9 /* CFNetwork.framework in Frameworks */,
 				DFEF2F691B75A9C3006342C9 /* MobileCoreServices.framework in Frameworks */,
 				DFEF2F671B75A9B6006342C9 /* CoreGraphics.framework in Frameworks */,
 				DFEF2F651B75A9AA006342C9 /* Security.framework in Frameworks */,
 				DFEF2F631B75A9A0006342C9 /* CoreLocation.framework in Frameworks */,
+				DF81C5041C3184A000A5016D /* BmobSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,6 +256,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF81C51A1C318D6D00A5016D /* MobileCoreServices.framework in Frameworks */,
+				DF81C5191C318D5E00A5016D /* CoreLocation.framework in Frameworks */,
+				DF81C5181C318D5600A5016D /* Security.framework in Frameworks */,
+				DF81C5171C318D4E00A5016D /* CoreGraphics.framework in Frameworks */,
+				DF81C5161C318D4800A5016D /* CFNetwork.framework in Frameworks */,
+				DF81C5151C318D3E00A5016D /* CoreTelephony.framework in Frameworks */,
+				DF81C5141C318D3800A5016D /* SystemConfiguration.framework in Frameworks */,
+				DF81C5131C318D2E00A5016D /* AVFoundation.framework in Frameworks */,
+				DF81C5121C318D2700A5016D /* MediaPlayer.framework in Frameworks */,
+				DF81C5111C318D1F00A5016D /* AssetsLibrary.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,14 +275,10 @@
 		DF2CB5551C31729D00F837DB /* Framework */ = {
 			isa = PBXGroup;
 			children = (
-				DF2CB5ED1C317AE300F837DB /* BmobSDK.framework */,
-				DF1231871C1EFFC7003AD09C /* BmobSDK.framework */,
+				DF81C5031C3184A000A5016D /* BmobSDK.framework */,
 				DF6F06BE1C26A2AE007D027F /* AssetsLibrary.framework */,
 				DFEF2F781B75AA1D006342C9 /* MediaPlayer.framework */,
 				DFEF2F761B75AA13006342C9 /* AVFoundation.framework */,
-				DFEF2F741B75AA0B006342C9 /* libsqlite3.dylib */,
-				DFEF2F721B75A9F4006342C9 /* libicucore.dylib */,
-				DFEF2F701B75A9EA006342C9 /* libz.1.2.5.dylib */,
 				DFEF2F6E1B75A9E2006342C9 /* SystemConfiguration.framework */,
 				DFEF2F6C1B75A9D8006342C9 /* CoreTelephony.framework */,
 				DFEF2F6A1B75A9CE006342C9 /* CFNetwork.framework */,
@@ -279,6 +293,7 @@
 		DF2CB5571C3172FA00F837DB /* other */ = {
 			isa = PBXGroup;
 			children = (
+				DFE6C7D21C38BDAF00C4683E /* MKConst.h */,
 				DF2CB5581C31730800F837DB /* lib */,
 			);
 			name = other;
@@ -337,12 +352,10 @@
 		DF2CB5C21C31798E00F837DB /* tools */ = {
 			isa = PBXGroup;
 			children = (
-				DF2CB5E71C317ACB00F837DB /* bmobOperation.h */,
-				DF2CB5E81C317ACB00F837DB /* bmobOperation.m */,
-				DF2CB5E91C317ACB00F837DB /* utility.h */,
-				DF2CB5EA1C317ACB00F837DB /* utility.m */,
-				DF7AF4951B83641200E6C96E /* utility.h */,
-				DF7AF4961B83641200E6C96E /* utility.m */,
+				DF81C5051C3184FA00A5016D /* bmobOperation.h */,
+				DF81C5061C3184FA00A5016D /* bmobOperation.m */,
+				DF81C5071C3184FA00A5016D /* utility.h */,
+				DF81C5081C3184FA00A5016D /* utility.m */,
 			);
 			name = tools;
 			sourceTree = "<group>";
@@ -350,6 +363,10 @@
 		DF587F1A1B2B00FA009AB71A = {
 			isa = PBXGroup;
 			children = (
+				DF3A49531C32C62C00EC0600 /* libsqlite3.dylib */,
+				DF3A49511C32C60E00EC0600 /* libicucore.A.dylib */,
+				DF3A494F1C32C5B900EC0600 /* libz.1.dylib */,
+				DF81C50B1C31851F00A5016D /* Default-568h@2x.png */,
 				DF2CB5551C31729D00F837DB /* Framework */,
 				DF587F251B2B00FA009AB71A /* Newwws */,
 				DF587F3F1B2B00FA009AB71A /* NewwwsTests */,
@@ -369,11 +386,9 @@
 		DF587F251B2B00FA009AB71A /* Newwws */ = {
 			isa = PBXGroup;
 			children = (
-				DF81C4621C317C8B00A5016D /* Info.plist */,
 				DF2CB5C21C31798E00F837DB /* tools */,
 				DF2CB5571C3172FA00F837DB /* other */,
 				DF2CB5A51C31736C00F837DB /* Classes */,
-				DF587F301B2B00FA009AB71A /* Main.storyboard */,
 				DF587F261B2B00FA009AB71A /* Supporting Files */,
 			);
 			name = Newwws;
@@ -383,12 +398,13 @@
 		DF587F261B2B00FA009AB71A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				DF81C4621C317C8B00A5016D /* Info.plist */,
+				DF81C50D1C31860900A5016D /* Main.storyboard */,
 				DF81C45F1C317C8B00A5016D /* AppDelegate.h */,
 				DF81C4601C317C8B00A5016D /* AppDelegate.m */,
 				DF81C4611C317C8B00A5016D /* images.xcassets */,
 				DF81C4631C317C8B00A5016D /* main.m */,
 				DF81C4641C317C8B00A5016D /* star.png */,
-				DF587F351B2B00FA009AB71A /* LaunchScreen.xib */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -396,7 +412,6 @@
 		DF587F3F1B2B00FA009AB71A /* NewwwsTests */ = {
 			isa = PBXGroup;
 			children = (
-				DF587F421B2B00FA009AB71A /* NewwwsTests.m */,
 				DF587F401B2B00FA009AB71A /* Supporting Files */,
 			);
 			name = NewwwsTests;
@@ -406,7 +421,6 @@
 		DF587F401B2B00FA009AB71A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				DF587F411B2B00FA009AB71A /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -547,6 +561,10 @@
 			children = (
 				DF81C4E81C317F1500A5016D /* MKPhotoView.h */,
 				DF81C4E91C317F1500A5016D /* MKPhotoView.m */,
+				DF3A49551C32D3E000EC0600 /* MKPhotosView.h */,
+				DF3A49561C32D3E000EC0600 /* MKPhotosView.m */,
+				DFE6C7D31C390C2800C4683E /* MKPostCell.h */,
+				DFE6C7D41C390C2800C4683E /* MKPostCell.m */,
 				DF81C4EA1C317F1500A5016D /* MKPostTopView.h */,
 				DF81C4EB1C317F1500A5016D /* MKPostTopView.m */,
 			);
@@ -692,13 +710,13 @@
 				DF81C4BD1C317E8300A5016D /* ELCAssetPicker.xib in Resources */,
 				DF81C4BE1C317E8300A5016D /* ELCAssetTablePicker.xib in Resources */,
 				DF81C4661C317C8B00A5016D /* images.xcassets in Resources */,
-				DF587F321B2B00FA009AB71A /* Main.storyboard in Resources */,
+				DF81C50C1C31851F00A5016D /* Default-568h@2x.png in Resources */,
+				DF81C50E1C31860900A5016D /* Main.storyboard in Resources */,
 				DF81C4C01C317E8300A5016D /* Overlay@2x.png in Resources */,
 				DF81C4691C317C8B00A5016D /* star.png in Resources */,
 				DF81C4C11C317E8300A5016D /* MJRefresh.bundle in Resources */,
 				DF81C4BF1C317E8300A5016D /* Overlay.png in Resources */,
 				DF81C4671C317C8B00A5016D /* Info.plist in Resources */,
-				DF587F371B2B00FA009AB71A /* LaunchScreen.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -721,27 +739,29 @@
 				DF81C4B81C317E8300A5016D /* ELCAssetTablePicker.m in Sources */,
 				DF81C4C81C317E8300A5016D /* UIView+MJExtension.m in Sources */,
 				DF81C4CA1C317E8300A5016D /* NSData+ImageContentType.m in Sources */,
+				DF3A49571C32D3E000EC0600 /* MKPhotosView.m in Sources */,
 				DF81C4F01C317F1500A5016D /* MKPostFrame.m in Sources */,
 				DF81C4D61C317E8300A5016D /* UIImageView+HighlightedWebCache.m in Sources */,
 				DF81C4F21C317F1500A5016D /* MKPhotoView.m in Sources */,
 				DF81C4C51C317E8300A5016D /* MJRefreshHeaderView.m in Sources */,
 				DF81C4D51C317E8300A5016D /* UIImage+WebP.m in Sources */,
-				DF2CB5EC1C317ACB00F837DB /* utility.m in Sources */,
 				DF81C4B91C317E8300A5016D /* ELCConsole.m in Sources */,
 				DF81C4EE1C317F1500A5016D /* MKPhoto.m in Sources */,
 				DF81C4D41C317E8300A5016D /* UIImage+MultiFormat.m in Sources */,
 				DF81C4CD1C317E8300A5016D /* SDWebImageDecoder.m in Sources */,
 				DF81C4EF1C317F1500A5016D /* MKPost.m in Sources */,
+				DF81C50A1C3184FA00A5016D /* utility.m in Sources */,
 				DF81C5011C317F4700A5016D /* loginViewController.m in Sources */,
 				DF81C4D11C317E8300A5016D /* SDWebImagePrefetcher.m in Sources */,
 				DF81C4F11C317F1500A5016D /* MKUser.m in Sources */,
 				DF81C4D31C317E8300A5016D /* UIImage+GIF.m in Sources */,
 				DF81C4C71C317E8300A5016D /* UIScrollView+MJRefresh.m in Sources */,
 				DF81C4C61C317E8300A5016D /* UIScrollView+MJExtension.m in Sources */,
+				DFE6C7D51C390C2800C4683E /* MKPostCell.m in Sources */,
 				DF81C4C21C317E8300A5016D /* MJRefreshBaseView.m in Sources */,
 				DF81C4C31C317E8300A5016D /* MJRefreshConst.m in Sources */,
+				DF81C5091C3184FA00A5016D /* bmobOperation.m in Sources */,
 				DF81C4D71C317E8300A5016D /* UIImageView+WebCache.m in Sources */,
-				DF2CB5EB1C317ACB00F837DB /* bmobOperation.m in Sources */,
 				DF81C4C41C317E8300A5016D /* MJRefreshFooterView.m in Sources */,
 				DF81C5021C317F4700A5016D /* registerViewController.m in Sources */,
 				DF81C4EC1C317F1500A5016D /* myNewsViewController.m in Sources */,
@@ -754,7 +774,6 @@
 				DF81C4CF1C317E8300A5016D /* SDWebImageDownloaderOperation.m in Sources */,
 				DF81C4ED1C317F1500A5016D /* publishViewController.m in Sources */,
 				DF81C4D81C317E8300A5016D /* UIView+WebCacheOperation.m in Sources */,
-				DF7AF4971B83641200E6C96E /* utility.m in Sources */,
 				DF81C4C91C317E8300A5016D /* MKAnnotationView+WebCache.m in Sources */,
 				DF81C4B61C317E8300A5016D /* ELCAsset.m in Sources */,
 				DF81C4CE1C317E8300A5016D /* SDWebImageDownloader.m in Sources */,
@@ -769,7 +788,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DF587F431B2B00FA009AB71A /* NewwwsTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -782,25 +800,6 @@
 			targetProxy = DF587F3D1B2B00FA009AB71A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		DF587F301B2B00FA009AB71A /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				DF587F311B2B00FA009AB71A /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		DF587F351B2B00FA009AB71A /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				DF587F361B2B00FA009AB71A /* Base */,
-			);
-			name = LaunchScreen.xib;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		DF587F441B2B00FA009AB71A /* Debug */ = {
@@ -821,7 +820,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Wei Feng Hou (2M922Q6CCQ)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Wei Feng Hou (2M922Q6CCQ)";
+				"CODE_SIGN_IDENTITY[sdk=*]" = "iPhone Developer: Wei Feng Hou (2M922Q6CCQ)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -841,6 +840,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				"HEADER_SEARCH_PATHS[arch=*]" = "$(PROJECT_DIR)/Newwws/other/lib";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -879,6 +879,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				"HEADER_SEARCH_PATHS[arch=*]" = "$(PROJECT_DIR)/Newwws/other/lib";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
@@ -893,15 +894,17 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer: Wei Feng Hou (2M922Q6CCQ)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/hustqmk/develop/bmob/Bmob_SDK_iOS_v1.6.1,
-					"$(PROJECT_DIR)/firstAP",
-					"$(PROJECT_DIR)/firstAP/Framework",
+					"$(PROJECT_DIR)/Newwws/Framework",
+					"$(PROJECT_DIR)",
 				);
-				INFOPLIST_FILE = firstAP/Info.plist;
+				INFOPLIST_FILE = Newwws/supporting/info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = Newwws;
+				SDKROOT = iphoneos9.1;
 				TARGETED_DEVICE_FAMILY = 1;
+				VALID_ARCHS = "armv7 arm64 armv7s";
 			};
 			name = Debug;
 		};
@@ -912,15 +915,17 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer: Wei Feng Hou (2M922Q6CCQ)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/hustqmk/develop/bmob/Bmob_SDK_iOS_v1.6.1,
-					"$(PROJECT_DIR)/firstAP",
-					"$(PROJECT_DIR)/firstAP/Framework",
+					"$(PROJECT_DIR)/Newwws/Framework",
+					"$(PROJECT_DIR)",
 				);
-				INFOPLIST_FILE = firstAP/Info.plist;
+				INFOPLIST_FILE = Newwws/supporting/info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = Newwws;
+				SDKROOT = iphoneos9.1;
 				TARGETED_DEVICE_FAMILY = 1;
+				VALID_ARCHS = "armv7 arm64 armv7s";
 			};
 			name = Release;
 		};
@@ -936,10 +941,13 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = firstAPTests/Info.plist;
+				INFOPLIST_FILE = "";
+				"INFOPLIST_FILE[sdk=*]" = "";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				"LIBRARY_SEARCH_PATHS[arch=*]" = "";
 				PRODUCT_NAME = Newwws;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Newwws.app/Newwws";
+				"VALID_ARCHS[sdk=*]" = "arm64 armv7 armv7s";
 			};
 			name = Debug;
 		};
@@ -951,7 +959,7 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = firstAPTests/Info.plist;
+				INFOPLIST_FILE = "";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = Newwws;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Newwws.app/Newwws";

@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "bmobOperation.h"
+#import "MKConst.h"
 @interface myNewsViewController : UIViewController
 <UITableViewDataSource,UITableViewDelegate,BmobEventDelegate>
+- (void)headerRefreshing;
 @end
 
 

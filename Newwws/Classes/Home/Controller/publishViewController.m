@@ -63,7 +63,7 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void) savePost: (NSUInteger)postID withImage:(NSString *) imageName withThumbImage:(NSString *) thumbImage
+-(void) savePost: (NSUInteger)postID withImage:(NSArray *) imageName withThumbImage:(NSArray *) thumbImage
 {
 
     // 1. save to image table
@@ -118,24 +118,33 @@
 {
     // record the error info
     __block NSError * postError = nil;
-    __block NSMutableArray * imageDatabaseNameArray =
+    __block NSMutableArray * imageNameArray =
+        [[NSMutableArray alloc] initWithCapacity:[imageDict count]];
+    __block NSMutableArray * imageUrlArray =
+        [[NSMutableArray alloc] initWithCapacity:[imageDict count]];
+    __block NSMutableArray * thumbUrlArray =
         [[NSMutableArray alloc] initWithCapacity:[imageDict count]];
     __block NSUInteger maxPostID;
     dispatch_group_t databaseGroup = dispatch_group_create();
+    dispatch_group_t thumbImageGroup = dispatch_group_create();
     
     //create the dispatch group
     // start first database connection, store the
     dispatch_group_enter(databaseGroup);
     [BmobProFile uploadFilesWithDatas:imageDict resultBlock:^(NSArray *filenameArray, NSArray *urlArray, NSArray *bmobFileArray, NSError *error) {
-        dispatch_group_leave(databaseGroup);
         if (error) {
             postError = error;
         }
         else{
             for (NSString * fileName in filenameArray) {
-                [imageDatabaseNameArray addObject:fileName];
+                [imageNameArray addObject:fileName];
             }
+            for (NSString * fileName in urlArray) {
+                [imageUrlArray addObject:fileName];
+            }
+            
         }
+        dispatch_group_leave(databaseGroup);
         NSLog(@"Task1 Done");
     } progress:^(NSUInteger index, CGFloat progress) {
         NSLog(@"%f",progress);
@@ -162,29 +171,43 @@
         NSLog(@"Task2 Done");
     }];
     
-    // wait util above finish
-    maxPostID++;
-    NSString * text = self.publishTextView.text;
-    // 1. save to post table
-    NSNumber * newID = [[NSNumber alloc] initWithInteger:maxPostID];
-    BmobObject * newsBB = [BmobObject objectWithClassName:@"newsPub"];
-    [newsBB setObject:newID forKey:@"newsID"];
-    [newsBB setObject:text forKey:@"text"];
-    [newsBB saveInBackground];
-    
-    __block NSMutableArray * thumbImageNames = [[NSMutableArray alloc] initWithCapacity:[imageDatabaseNameArray count]];
+
+    dispatch_group_enter(thumbImageGroup);
+    __block NSMutableArray * thumbImageNames = [[NSMutableArray alloc] initWithCapacity:[imageNameArray count]];
     dispatch_group_notify(databaseGroup, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         // ask to generate the thumbnail image
-        for (NSString *imageName in imageDatabaseNameArray) {
+        for (NSString *imageName in imageNameArray) {
+            dispatch_group_enter(thumbImageGroup);
             [BmobProFile thumbnailImageWithFilename:imageName ruleID:1 resultBlock:^(BOOL isSuccessful, NSError *error, NSString *filename, NSString *url, BmobFile *file) {
                 if(error){
-                    
+                    NSLog(@"%@",error);
                 }else{
-                    [self savePost:maxPostID withImage:imageName withThumbImage:filename];
+                    dispatch_group_leave(thumbImageGroup);
+                    [thumbUrlArray addObject:url];
+                    
                 }
             }];
         }
+        dispatch_group_leave(thumbImageGroup);
     });
+    dispatch_group_notify(thumbImageGroup, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        // wait util above finish
+        maxPostID++;
+        NSString * text = self.publishTextView.text;
+        // 1. save to post table
+        NSNumber * newID = [[NSNumber alloc] initWithInteger:maxPostID];
+        BmobObject * newsBB = [BmobObject objectWithClassName:@"newsPub"];
+        [newsBB setObject:newID forKey:@"newsID"];
+        [newsBB setObject:text forKey:@"text"];
+        [newsBB setObject:imageUrlArray forKey:@"images"];
+        [newsBB setObject:thumbUrlArray forKey:@"thumbImages"];
+        [newsBB saveInBackgroundWithResultBlock:^(BOOL isSuccessful, NSError *error) {
+            if (error) {
+                NSLog(@"%@",error);
+            }
+        }];
+    });
+    
 }
 - (IBAction)publishNews:(id)sender
 {
@@ -210,15 +233,7 @@
     }
 
 }
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 -(void)pickMediaFromSource:(UIImagePickerControllerSourceType)sourceType
 {
     NSArray * mediaTypes = [UIImagePickerController availableMediaTypesForSourceType:sourceType];
@@ -242,9 +257,6 @@
 
 -(void)openCamera
 {
-    // only support one image select for UIImagePickerController
-    //[self pickMediaFromSource:UIImagePickerControllerSourceTypePhotoLibrary];
-    // use ELCImagePicker for multi image selection.
     ELCImagePickerController * elcPicker = [[ELCImagePickerController alloc] initImagePicker];
     elcPicker.maximumImagesCount = 8; // set the max images to select
     elcPicker.returnsOriginalImage = NO; //Only return the fullScreenImage, not the fullResolutionImage
@@ -317,21 +329,6 @@
 
 -(void) elcImagePickerController:(ELCImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
-    /*
-     UIImage * chooseImage = info[UIImagePickerControllerEditedImage];
-    
-    NSURL *refURL = info[UIImagePickerControllerReferenceURL];
-    
-    ALAssetsLibraryAssetForURLResultBlock resultBlock = ^(ALAsset *imageAsset)
-    {
-        ALAssetRepresentation * imageRep = [imageAsset defaultRepresentation];
-        self.imageFileName = [imageRep filename];
-    };
-    ALAssetsLibrary * assetsLibrary = [[ALAssetsLibrary alloc] init];
-    [assetsLibrary assetForURL:refURL resultBlock:resultBlock failureBlock:nil];
-    self.image = [self shrinkImage:chooseImage toSize:self.imageView.bounds.size];
-    [picker dismissViewControllerAnimated:YES completion:NULL];
-    */
     [self dismissViewControllerAnimated:YES completion:nil];
     
     NSMutableArray *images = [NSMutableArray arrayWithCapacity:[info count]];

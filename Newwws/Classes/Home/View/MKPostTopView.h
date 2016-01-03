@@ -8,9 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@class MKPostTopFrame;
+@class MKPostFrame;
 
 @interface MKPostTopView : UIImageView
 
-@property (nonatomic, strong) MKPostTopFrame * postFrame;
+@property (nonatomic, strong) MKPostFrame *postFrame;
 @end

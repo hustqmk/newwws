@@ -9,11 +9,17 @@
 #import "myNewsViewController.h"
 #import <BmobSDK/Bmob.h>
 #import <BmobSDK/BmobProFile.h>
+#import "MKPost.h"
+#import "MKPostFrame.h"
+#import "MJRefresh.h"
+#import "MKPostCell.h"
+#import "MKPhoto.h"
 @interface myNewsViewController ()
 @property (strong, nonatomic) IBOutletCollection(UITextField) NSArray *theNewField;
 @property (strong, nonatomic) NSMutableArray * newsData;
 @property (weak, nonatomic) IBOutlet UITableView *myNewsTableView;
 @property (strong, nonatomic) BmobEvent *bmobEvent;
+@property (strong, nonatomic) NSArray *postFrame;
 @end
 
 static NSString * const NEWS_TABLE = @"newsPub";
@@ -65,6 +71,55 @@ static NSString * const NEWS_TEXT = @"text";
     BmobQuery * query = [BmobQuery queryWithClassName:NEWS_TABLE];
     
 }
+
+-(void) headerRefreshing
+{
+    // 连接服务器，获取最新的数据
+    BmobQuery *bQuery = [BmobQuery queryWithClassName:NEWS_TABLE_NAME];
+    [bQuery setLimit:DEFAULT_NEWS_NUMBER];
+    [bQuery findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+        [self.myNewsTableView headerEndRefreshing];
+        NSMutableArray *postFrameArray = [NSMutableArray array];
+        for (BmobObject * obj in array) {
+            MKPost * myPost = [[MKPost alloc] init];
+            myPost.post_id = [obj objectForKey:NEWSID];
+            myPost.text = [obj objectForKey:NEWS_CONTENT];
+            myPost.user = [obj objectForKey:USERNAME];
+            NSArray * thumbimage_array = [obj objectForKey:THUMBIMAGES];
+            NSArray * image_array = [obj objectForKey:IMAGES];
+            NSMutableArray *thumbpics_url = [[NSMutableArray alloc] initWithCapacity:[thumbimage_array count]];
+            NSMutableArray *image_url = [[NSMutableArray alloc] initWithCapacity:[image_array count]];
+            for (NSString *url in thumbimage_array) {
+                NSMutableString *thumbpics = [[NSMutableString alloc] initWithCapacity:256];
+                MKPhoto * mp = [[MKPhoto alloc]init];
+                [thumbpics appendString:url];
+                [thumbpics appendString:MKImageUrlPara];
+                mp.thumbnail_pic = thumbpics;
+                [thumbpics_url addObject:mp];
+            }
+            for (NSString *url in image_array) {
+                NSMutableString *pics = [[NSMutableString alloc] initWithCapacity:256];
+                [pics appendString:url];
+                [pics appendString:MKImageUrlPara];
+                [image_url addObject:pics];
+            }
+            myPost.thumbpics_urls = thumbpics_url;
+            myPost.pic_urls = image_url;
+            
+            MKPostFrame * postFrame = [[MKPostFrame alloc] init];
+            postFrame.post = myPost;
+            [postFrameArray addObject:postFrame];
+        }
+        self.postFrame = postFrameArray;
+        [self.myNewsTableView reloadData];
+        if (postFrameArray.count) {
+            [self.myNewsTableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:YES];
+        }
+    }];
+    // 得到数据后，更新view controller
+    
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self listen];
@@ -72,6 +127,7 @@ static NSString * const NEWS_TEXT = @"text";
     // get user info
     _newsData = [[NSMutableArray alloc] initWithCapacity:3];
     [self initNewsData];
+    [self.myNewsTableView addHeaderWithTarget:self action:@selector(headerRefreshing)];
     // load user data
 }
 
@@ -88,10 +144,28 @@ static NSString * const NEWS_TEXT = @"text";
 
 -(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 10;
+    return [self.postFrame count];
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return [self.postFrame[indexPath.row] cellHeight];
+}
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    MKPostCell *cell = [MKPostCell cellWithTableView:tableView];
+    
+    cell.postFrame = self.postFrame[indexPath.row];
+    
+    return cell;
+}
+/*
 -(UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString * tableName = @"newsTableCell";
@@ -124,7 +198,7 @@ static NSString * const NEWS_TEXT = @"text";
     }
 
     return cell;
-}
+}*/
 /*
 #pragma mark - Navigation
 
