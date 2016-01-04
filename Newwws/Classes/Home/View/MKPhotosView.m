@@ -68,7 +68,7 @@
             
             CGFloat photoX = col * (MKPhotoW + MKPhotoMargin);
             CGFloat photoY = row * (MKPhotoH + MKPhotoMargin);
-            photoView.frame = CGRectMake(photoX,photoY+50,MKPhotoW,MKPhotoH);
+            photoView.frame = CGRectMake(photoX,photoY,MKPhotoW,MKPhotoH);
             
             if (photos.count == 1) {
                 photoView.contentMode = UIViewContentModeScaleAspectFit;

@@ -35,7 +35,7 @@
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        self.backgroundColor = [UIColor clearColor];
+        self.backgroundColor = [UIColor whiteColor];
         self.selectedBackgroundView = [[UIView alloc] init];
         
         // 初始化微博的topView
@@ -43,6 +43,16 @@
         
     }
     return self;
+}
+
+-(void) setFrame:(CGRect)frame
+{
+    frame.origin.x = MKPostPadding * 0.5;
+    frame.size.width -= MKPostPadding;
+    frame.origin.y += MKPostPadding * 0.5;
+    frame.size.height -= MKPostPadding *0.5;
+    
+    [super setFrame:frame];
 }
 
 /**

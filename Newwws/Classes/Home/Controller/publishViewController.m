@@ -12,7 +12,7 @@
 #import <AssetsLibrary/AssetsLibrary.h>
 #import "ELCImagePicker/ELCImagePickerController.h"
 #import "ELCImagePicker/ELCAlbumPickerController.h"
-
+#import "MKConst.h"
 
 @interface publishViewController ()
 
@@ -196,11 +196,13 @@
         NSString * text = self.publishTextView.text;
         // 1. save to post table
         NSNumber * newID = [[NSNumber alloc] initWithInteger:maxPostID];
-        BmobObject * newsBB = [BmobObject objectWithClassName:@"newsPub"];
-        [newsBB setObject:newID forKey:@"newsID"];
-        [newsBB setObject:text forKey:@"text"];
-        [newsBB setObject:imageUrlArray forKey:@"images"];
-        [newsBB setObject:thumbUrlArray forKey:@"thumbImages"];
+        BmobObject * newsBB = [BmobObject objectWithClassName:NEWS_TABLE_NAME];
+        BmobUser *bUser = [BmobUser getCurrentObject];
+        [newsBB setObject:newID forKey:NEWSID];
+        [newsBB setObject:bUser.username forKey:USERNAME];
+        [newsBB setObject:text forKey:NEWS_CONTENT];
+        [newsBB setObject:imageUrlArray forKey:IMAGES];
+        [newsBB setObject:thumbUrlArray forKey:THUMBIMAGES];
         [newsBB saveInBackgroundWithResultBlock:^(BOOL isSuccessful, NSError *error) {
             if (error) {
                 NSLog(@"%@",error);

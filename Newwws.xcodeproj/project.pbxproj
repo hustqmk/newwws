@@ -79,6 +79,7 @@
 		DF81C5181C318D5600A5016D /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFEF2F641B75A9AA006342C9 /* Security.framework */; };
 		DF81C5191C318D5E00A5016D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFEF2F621B75A9A0006342C9 /* CoreLocation.framework */; };
 		DF81C51A1C318D6D00A5016D /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFEF2F681B75A9C3006342C9 /* MobileCoreServices.framework */; };
+		DFD6BA7A1C3AB6410072AB9F /* UIImage+Extend.m in Sources */ = {isa = PBXBuildFile; fileRef = DFD6BA711C3AB6410072AB9F /* UIImage+Extend.m */; };
 		DFE6C7D51C390C2800C4683E /* MKPostCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DFE6C7D41C390C2800C4683E /* MKPostCell.m */; };
 		DFEF2F631B75A9A0006342C9 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFEF2F621B75A9A0006342C9 /* CoreLocation.framework */; };
 		DFEF2F651B75A9AA006342C9 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFEF2F641B75A9AA006342C9 /* Security.framework */; };
@@ -216,6 +217,8 @@
 		DF81C5081C3184FA00A5016D /* utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = utility.m; path = Newwws/tools/utility.m; sourceTree = SOURCE_ROOT; };
 		DF81C50B1C31851F00A5016D /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		DF81C50D1C31860900A5016D /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = SOURCE_ROOT; };
+		DFD6BA701C3AB6410072AB9F /* UIImage+Extend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Extend.h"; sourceTree = SOURCE_ROOT; };
+		DFD6BA711C3AB6410072AB9F /* UIImage+Extend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Extend.m"; sourceTree = SOURCE_ROOT; };
 		DFE6C7D21C38BDAF00C4683E /* MKConst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MKConst.h; path = Newwws/other/MKConst.h; sourceTree = SOURCE_ROOT; };
 		DFE6C7D31C390C2800C4683E /* MKPostCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKPostCell.h; sourceTree = "<group>"; };
 		DFE6C7D41C390C2800C4683E /* MKPostCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKPostCell.m; sourceTree = "<group>"; };
@@ -312,6 +315,7 @@
 		DF2CB5A51C31736C00F837DB /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				DFD6BA6F1C3AB6200072AB9F /* Category */,
 				DF2CB5A81C3173A000F837DB /* me */,
 				DF2CB5A71C31738800F837DB /* Discover */,
 				DF2CB5A61C31737900F837DB /* Home */,
@@ -626,6 +630,15 @@
 			path = Newwws/Classes/me/View;
 			sourceTree = SOURCE_ROOT;
 		};
+		DFD6BA6F1C3AB6200072AB9F /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				DFD6BA701C3AB6410072AB9F /* UIImage+Extend.h */,
+				DFD6BA711C3AB6410072AB9F /* UIImage+Extend.m */,
+			);
+			name = Category;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -781,6 +794,7 @@
 				DF81C4D21C317E8300A5016D /* UIButton+WebCache.m in Sources */,
 				DF81C4B71C317E8300A5016D /* ELCAssetCell.m in Sources */,
 				DF81C4F31C317F1500A5016D /* MKPostTopView.m in Sources */,
+				DFD6BA7A1C3AB6410072AB9F /* UIImage+Extend.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

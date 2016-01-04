@@ -36,7 +36,7 @@
     CGFloat nameY = iconXY;
     CGSize nameSize = [_post.user sizeWithFont:[UIFont systemFontOfSize:MKPostNameFont]];
     _nameBtnF = (CGRect){nameX,nameY,nameSize};
-    
+
     // 3. 时间
     CGFloat timeX = nameX;
     CGFloat timeY = CGRectGetMaxY(_nameBtnF) + MKPostPadding * 0.5;
@@ -61,7 +61,9 @@
         _photoViewF = CGRectMake(photoX, photoY, photoSize.width, photoSize.height);
         
         originalH = CGRectGetMaxY(_photoViewF) + MKPostPadding;
+        
     }
+    _originalViewF = CGRectMake(orginalX, orginalY, orginalW, originalH);
     
     _cellHeight = originalH + MKPostPadding * 0.5;
     

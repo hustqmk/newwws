@@ -77,6 +77,7 @@ static NSString * const NEWS_TEXT = @"text";
     // 连接服务器，获取最新的数据
     BmobQuery *bQuery = [BmobQuery queryWithClassName:NEWS_TABLE_NAME];
     [bQuery setLimit:DEFAULT_NEWS_NUMBER];
+    [bQuery orderByDescending:CREATEDAT];
     [bQuery findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
         [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
         [self.myNewsTableView headerEndRefreshing];
@@ -86,6 +87,7 @@ static NSString * const NEWS_TEXT = @"text";
             myPost.post_id = [obj objectForKey:NEWSID];
             myPost.text = [obj objectForKey:NEWS_CONTENT];
             myPost.user = [obj objectForKey:USERNAME];
+            myPost.created_at = [obj objectForKey:CREATEDAT];
             NSArray * thumbimage_array = [obj objectForKey:THUMBIMAGES];
             NSArray * image_array = [obj objectForKey:IMAGES];
             NSMutableArray *thumbpics_url = [[NSMutableArray alloc] initWithCapacity:[thumbimage_array count]];
@@ -116,9 +118,8 @@ static NSString * const NEWS_TEXT = @"text";
         if (postFrameArray.count) {
             [self.myNewsTableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:YES];
         }
+
     }];
-    // 得到数据后，更新view controller
-    
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -128,6 +129,11 @@ static NSString * const NEWS_TEXT = @"text";
     _newsData = [[NSMutableArray alloc] initWithCapacity:3];
     [self initNewsData];
     [self.myNewsTableView addHeaderWithTarget:self action:@selector(headerRefreshing)];
+    [self.myNewsTableView headerBeginRefreshing];
+    
+    self.myNewsTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.myNewsTableView.backgroundColor = MKColor(226,226,226);
+    self.myNewsTableView.contentInset = UIEdgeInsetsMake(0,0,MKPostPadding*0.5, 0);
     // load user data
 }
 

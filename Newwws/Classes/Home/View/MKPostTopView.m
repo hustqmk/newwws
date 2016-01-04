@@ -12,7 +12,7 @@
 #import "MKPostFrame.h"
 #import "MKConst.h"
 #import "MKPost.h"
-
+#import "UIImage+Extend.h"
 
 
 @class MKPhotosView;
@@ -47,6 +47,7 @@
         [self addSubview:iconview];
         self.iconView = iconview;
         
+        // 2. 姓名
         UIButton *nameBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         nameBtn.titleLabel.font = [UIFont systemFontOfSize:MKPostNameFont];
         [self addSubview:nameBtn];
@@ -84,10 +85,14 @@
     MKPost * post = postFrame.post;
     
     // set user header image
+    NSArray *userImage = @[@"1",@"2",@"3",@"4"];
+    self.iconView.frame = postFrame.iconViewF;
+    self.iconView.image = [UIImage resizedImageWithName:userImage[rand()%4]];
     
     // nike name
     [self.nameBtn setTitle:post.user forState:UIControlStateNormal];
-    self.iconView.frame = postFrame.nameBtnF;
+    self.nameBtn.frame = postFrame.nameBtnF;
+    [self.nameBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     
     // time
     self.timeLabel.text = post.created_at;
