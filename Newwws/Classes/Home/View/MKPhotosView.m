@@ -8,7 +8,9 @@
 
 #import "MKPhotosView.h"
 #import "MKPhotoView.h"
-
+#import "MJPhoto.h"
+#import "MJPhotoBrowser.h"
+#import "MKPhoto.h"
 
 #define MKPhotoW 70
 #define MKPhotoH 70
@@ -26,6 +28,7 @@
             MKPhotoView *photoView = [[MKPhotoView alloc] init];
             photoView.tag = index;
             photoView.userInteractionEnabled = YES;
+            [photoView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(photoTap:)]];
             [self addSubview:photoView];
         }
     }
@@ -85,4 +88,44 @@
         }
     }
 }
+
+-(void) photoTap:(UITapGestureRecognizer *) tap
+{
+    int count = (int)self.photos.count;
+    
+    NSMutableArray *photos = [NSMutableArray arrayWithCapacity:count];
+    for (int i = 0; i < count; i++) {
+        MJPhoto *photo = [[MJPhoto alloc] init];
+        
+        MKPhoto * mkp = (MKPhoto *)self.photos[i];
+        photo.url = [NSURL URLWithString:mkp.pic];
+        
+        photo.srcImageView = self.subviews[i];
+        [photos addObject:photo];
+    }
+    
+    MJPhotoBrowser *browser = [[MJPhotoBrowser alloc] init];
+    browser.currentPhotoIndex = tap.view.tag;
+    browser.photos = photos;
+    [browser show];
+}
 @end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

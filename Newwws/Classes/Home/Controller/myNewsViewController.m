@@ -92,12 +92,16 @@ static NSString * const NEWS_TEXT = @"text";
             NSArray * image_array = [obj objectForKey:IMAGES];
             NSMutableArray *thumbpics_url = [[NSMutableArray alloc] initWithCapacity:[thumbimage_array count]];
             NSMutableArray *image_url = [[NSMutableArray alloc] initWithCapacity:[image_array count]];
-            for (NSString *url in thumbimage_array) {
+            for (int i = 0; i < [thumbimage_array count]; i++) {
                 NSMutableString *thumbpics = [[NSMutableString alloc] initWithCapacity:256];
+                NSMutableString *pics = [[NSMutableString alloc] initWithCapacity:256];
                 MKPhoto * mp = [[MKPhoto alloc]init];
-                [thumbpics appendString:url];
+                [thumbpics appendString:thumbimage_array[i]];
                 [thumbpics appendString:MKImageUrlPara];
+                [pics appendString:image_array[i]];
+                [pics appendString:MKImageUrlPara];
                 mp.thumbnail_pic = thumbpics;
+                mp.pic = pics;
                 [thumbpics_url addObject:mp];
             }
             for (NSString *url in image_array) {

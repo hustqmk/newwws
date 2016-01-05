@@ -85,8 +85,8 @@
     // record the error info
     __block NSError * postError = nil;
     __block NSUInteger maxPostID;
-    BmobQuery * query = [BmobQuery queryWithClassName:@"newsPub"];
-    [query orderByDescending:@"newsID"];
+    BmobQuery * query = [BmobQuery queryWithClassName:NEWS_TABLE_NAME];
+    [query orderByDescending:NEWSID];
     query.limit = 1;
     [query findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
         if (error) {
@@ -95,7 +95,7 @@
         else {
             if ([array count] == 1) {
                 BmobObject *bb = [array firstObject];
-                NSNumber *postID= [bb objectForKey:@"newsID"];
+                NSNumber *postID= [bb objectForKey:NEWSID];
                 maxPostID = postID.integerValue;
             }
             else
@@ -105,9 +105,11 @@
             NSString * text = self.publishTextView.text;
             // 1. save to post table
             NSNumber * newID = [[NSNumber alloc] initWithInteger:maxPostID];
-            BmobObject * newsBB = [BmobObject objectWithClassName:@"newsPub"];
-            [newsBB setObject:newID forKey:@"newsID"];
-            [newsBB setObject:text forKey:@"text"];
+            BmobObject * newsBB = [BmobObject objectWithClassName:NEWS_TABLE_NAME];
+            BmobUser *bUser = [BmobUser getCurrentObject];
+            [newsBB setObject:newID forKey:NEWSID];
+            [newsBB setObject:bUser.username forKey:USERNAME];
+            [newsBB setObject:text forKey:NEWS_CONTENT];
             [newsBB saveInBackground];
             
         }
@@ -233,6 +235,7 @@
         // submit to database
         [self publishImagePost:imageToDataBase];
     }
+    [self.navigationController popToRootViewControllerAnimated:YES];
 
 }
 

@@ -23,11 +23,11 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        UIImage *gif = [UIImage imageNamed:@"timeline_image_gif"];
+        /*UIImage *gif = [UIImage imageNamed:@"timeline_image_gif"];
         UIImageView *gifView = [[UIImageView alloc] initWithImage:gif];
         [self addSubview:gifView];
         
-        self.gifView = gifView;
+        self.gifView = gifView;*/
     }
 
     return self;

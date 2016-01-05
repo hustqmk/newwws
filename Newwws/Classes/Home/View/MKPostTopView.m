@@ -110,6 +110,9 @@
         self.photosView.photos = post.thumbpics_urls;
         self.photosView.frame = postFrame.photoViewF;
     }
+    else{
+        self.photosView.hidden = YES;
+    }
 }
 
 

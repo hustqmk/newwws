@@ -19,6 +19,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.accountTextField.delegate = self;
+    self.passwdTextField.delegate = self;
     BmobUser *user = [BmobUser getCurrentUser];
     if (user) {
         // load my setting
@@ -45,10 +47,14 @@
      {
          if (error)
          {
-             NSLog(@"%@",error);
+             UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Login Message" message:@"user name or password wrong." delegate:nil cancelButtonTitle:@"OK!" otherButtonTitles:nil, nil];
+             [alert show];
+             NSLog(@"Login success!");
          }
          else
          {
+             UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Login Message" message:@"You're In!" delegate:nil cancelButtonTitle:@"OK!" otherButtonTitles:nil, nil];
+             [alert show];
              NSLog(@"Login success!");
          }
      }];
@@ -65,14 +71,24 @@
 
 }
 
-/*
-#pragma mark - Navigation
+#pragma mark TextViewDelegate
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    if(textField != nil)
+        [textField becomeFirstResponder];
 }
-*/
+
+- (BOOL)textField:(UITextField *)textField
+shouldChangeCharactersInRange:(NSRange)range
+replacementString:(NSString *)string
+{
+    if([string isEqualToString:@"\n"])
+    {
+        [textField resignFirstResponder];
+        return NO;
+    }
+    return YES;
+}
 
 @end

@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import "utility.h"
-@interface loginViewController : UIViewController
+@interface loginViewController : UIViewController<UITextFieldDelegate>
 
 @end

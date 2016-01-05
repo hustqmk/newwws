@@ -698,11 +698,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Newwws/Classes/Home/Controller/publishViewController.m"
-            timestampString = "473610565.722613"
+            timestampString = "473693944.354526"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "234"
-            endingLineNumber = "234"
+            startingLineNumber = "236"
+            endingLineNumber = "236"
             landmarkName = "-publishNews:"
             landmarkType = "5">
          </BreakpointContent>
@@ -714,11 +714,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Newwws/Classes/Home/Controller/publishViewController.m"
-            timestampString = "473441315.49659"
+            timestampString = "473693944.354526"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "168"
-            endingLineNumber = "168"
+            startingLineNumber = "170"
+            endingLineNumber = "170"
             landmarkName = "-publishImagePost:"
             landmarkType = "5">
          </BreakpointContent>
@@ -730,11 +730,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Newwws/Classes/Home/Controller/publishViewController.m"
-            timestampString = "473441315.49659"
+            timestampString = "473693944.354526"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "164"
-            endingLineNumber = "164"
+            startingLineNumber = "166"
+            endingLineNumber = "166"
             landmarkName = "-publishImagePost:"
             landmarkType = "5">
          </BreakpointContent>
@@ -746,11 +746,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Newwws/Classes/Home/Controller/publishViewController.m"
-            timestampString = "473441315.49659"
+            timestampString = "473693944.354526"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "184"
-            endingLineNumber = "184"
+            startingLineNumber = "186"
+            endingLineNumber = "186"
             landmarkName = "-publishImagePost:"
             landmarkType = "5">
          </BreakpointContent>
@@ -762,11 +762,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Newwws/Classes/Home/Controller/publishViewController.m"
-            timestampString = "473441315.49659"
+            timestampString = "473693944.354526"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "185"
-            endingLineNumber = "185"
+            startingLineNumber = "187"
+            endingLineNumber = "187"
             landmarkName = "-publishImagePost:"
             landmarkType = "5">
          </BreakpointContent>
@@ -778,23 +778,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Newwws/Classes/Home/Controller/publishViewController.m"
-            timestampString = "473441315.49659"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "195"
-            endingLineNumber = "195"
-            landmarkName = "-publishImagePost:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Newwws/Classes/Home/Controller/publishViewController.m"
-            timestampString = "473441315.49659"
+            timestampString = "473693944.354526"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "197"
@@ -810,7 +794,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Newwws/Classes/Home/Controller/publishViewController.m"
-            timestampString = "473610565.722613"
+            timestampString = "473693944.354526"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "199"
@@ -826,11 +810,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Newwws/Classes/Home/Controller/publishViewController.m"
-            timestampString = "473441315.49659"
+            timestampString = "473693944.354526"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "191"
-            endingLineNumber = "191"
+            startingLineNumber = "201"
+            endingLineNumber = "201"
             landmarkName = "-publishImagePost:"
             landmarkType = "5">
          </BreakpointContent>
@@ -842,11 +826,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Newwws/Classes/Home/Controller/publishViewController.m"
-            timestampString = "473441315.49659"
+            timestampString = "473693944.354526"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "175"
-            endingLineNumber = "175"
+            startingLineNumber = "193"
+            endingLineNumber = "193"
             landmarkName = "-publishImagePost:"
             landmarkType = "5">
          </BreakpointContent>
@@ -858,11 +842,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Newwws/Classes/Home/Controller/publishViewController.m"
-            timestampString = "473441315.49659"
+            timestampString = "473693944.354526"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "174"
-            endingLineNumber = "174"
+            startingLineNumber = "177"
+            endingLineNumber = "177"
             landmarkName = "-publishImagePost:"
             landmarkType = "5">
          </BreakpointContent>
@@ -874,11 +858,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Newwws/Classes/Home/Controller/publishViewController.m"
-            timestampString = "473610565.722613"
+            timestampString = "473693944.354526"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "208"
-            endingLineNumber = "208"
+            startingLineNumber = "176"
+            endingLineNumber = "176"
             landmarkName = "-publishImagePost:"
             landmarkType = "5">
          </BreakpointContent>
@@ -890,11 +874,27 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Newwws/Classes/Home/Controller/publishViewController.m"
-            timestampString = "473441315.49659"
+            timestampString = "473693944.354526"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "181"
-            endingLineNumber = "181"
+            startingLineNumber = "210"
+            endingLineNumber = "210"
+            landmarkName = "-publishImagePost:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Newwws/Classes/Home/Controller/publishViewController.m"
+            timestampString = "473693944.354526"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "183"
+            endingLineNumber = "183"
             landmarkName = "-publishImagePost:"
             landmarkType = "5">
             <Locations>
@@ -938,11 +938,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Newwws/Classes/Home/Controller/publishViewController.m"
-            timestampString = "473441315.49659"
+            timestampString = "473693944.354526"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "179"
-            endingLineNumber = "179"
+            startingLineNumber = "181"
+            endingLineNumber = "181"
             landmarkName = "-publishImagePost:"
             landmarkType = "5">
             <Locations>
@@ -986,11 +986,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Newwws/Classes/Home/Controller/publishViewController.m"
-            timestampString = "473441315.49659"
+            timestampString = "473693944.354526"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "182"
-            endingLineNumber = "182"
+            startingLineNumber = "184"
+            endingLineNumber = "184"
             landmarkName = "-publishImagePost:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1002,11 +1002,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Newwws/Classes/Home/Controller/publishViewController.m"
-            timestampString = "473477242.368959"
+            timestampString = "473693944.354526"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "139"
-            endingLineNumber = "139"
+            startingLineNumber = "141"
+            endingLineNumber = "141"
             landmarkName = "-publishImagePost:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1018,27 +1018,27 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Newwws/Classes/Home/Controller/publishViewController.m"
-            timestampString = "473477342.376009"
+            timestampString = "473693944.354526"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "138"
+            endingLineNumber = "138"
+            landmarkName = "-publishImagePost:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Newwws/Classes/Home/Controller/publishViewController.m"
+            timestampString = "473693944.354526"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "136"
             endingLineNumber = "136"
-            landmarkName = "-publishImagePost:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Newwws/Classes/Home/Controller/publishViewController.m"
-            timestampString = "473477396.782053"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "134"
-            endingLineNumber = "134"
             landmarkName = "-publishImagePost:"
             landmarkType = "5">
             <Locations>
@@ -1082,11 +1082,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Newwws/Classes/Home/Controller/publishViewController.m"
-            timestampString = "473477424.188509"
+            timestampString = "473693944.354526"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "129"
-            endingLineNumber = "129"
+            startingLineNumber = "131"
+            endingLineNumber = "131"
             landmarkName = "-publishImagePost:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1098,11 +1098,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Newwws/Classes/Home/Controller/publishViewController.m"
-            timestampString = "473610565.722613"
+            timestampString = "473693944.354526"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "216"
-            endingLineNumber = "216"
+            startingLineNumber = "218"
+            endingLineNumber = "218"
             landmarkName = "-publishNews:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1114,11 +1114,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Newwws/Classes/Home/Controller/publishViewController.m"
-            timestampString = "473610565.722613"
+            timestampString = "473693944.354526"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "217"
-            endingLineNumber = "217"
+            startingLineNumber = "219"
+            endingLineNumber = "219"
             landmarkName = "-publishNews:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1130,11 +1130,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Newwws/Classes/Home/Controller/myNewsViewController.m"
-            timestampString = "473603956.129578"
+            timestampString = "473693348.124896"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "110"
-            endingLineNumber = "110"
+            startingLineNumber = "114"
+            endingLineNumber = "114"
             landmarkName = "-headerRefreshing"
             landmarkType = "5">
          </BreakpointContent>
@@ -1178,27 +1178,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Newwws/Classes/Home/Controller/myNewsViewController.m"
-            timestampString = "473603956.129578"
+            timestampString = "473693348.124896"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "94"
-            endingLineNumber = "94"
-            landmarkName = "-headerRefreshing"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Newwws/Classes/Home/Controller/myNewsViewController.m"
-            timestampString = "473603956.129578"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "122"
-            endingLineNumber = "122"
+            startingLineNumber = "126"
+            endingLineNumber = "126"
             landmarkName = "-headerRefreshing"
             landmarkType = "5">
             <Locations>
@@ -1242,11 +1226,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Newwws/Classes/Home/Controller/myNewsViewController.m"
-            timestampString = "473603956.129578"
+            timestampString = "473693348.124896"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "113"
-            endingLineNumber = "113"
+            startingLineNumber = "117"
+            endingLineNumber = "117"
             landmarkName = "-headerRefreshing"
             landmarkType = "5">
          </BreakpointContent>
@@ -1258,11 +1242,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Newwws/Classes/Home/Controller/myNewsViewController.m"
-            timestampString = "473603956.129578"
+            timestampString = "473693348.124896"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "119"
-            endingLineNumber = "119"
+            startingLineNumber = "123"
+            endingLineNumber = "123"
             landmarkName = "-headerRefreshing"
             landmarkType = "5">
          </BreakpointContent>
@@ -1274,11 +1258,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Newwws/Classes/Home/Controller/myNewsViewController.m"
-            timestampString = "473603956.129578"
+            timestampString = "473693348.124896"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "116"
-            endingLineNumber = "116"
+            startingLineNumber = "120"
+            endingLineNumber = "120"
             landmarkName = "-headerRefreshing"
             landmarkType = "5">
          </BreakpointContent>
@@ -1290,7 +1274,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Newwws/Classes/Home/View/MKPostCell.m"
-            timestampString = "473510921.031788"
+            timestampString = "473690064.166639"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "26"
@@ -1306,11 +1290,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Newwws/Classes/Home/Controller/myNewsViewController.m"
-            timestampString = "473604845.271202"
+            timestampString = "473693348.124896"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "168"
-            endingLineNumber = "168"
+            startingLineNumber = "172"
+            endingLineNumber = "172"
             landmarkName = "-tableView:cellForRowAtIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1322,7 +1306,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Newwws/Classes/Home/View/MKPostCell.m"
-            timestampString = "473604256.693266"
+            timestampString = "473690397.667582"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "78"
@@ -1338,7 +1322,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Newwws/Classes/Home/View/MKPostCell.m"
-            timestampString = "473604256.693266"
+            timestampString = "473690397.667582"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "70"
@@ -1354,11 +1338,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Newwws/Classes/Home/Controller/myNewsViewController.m"
-            timestampString = "473604845.271202"
+            timestampString = "473693348.124896"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "170"
-            endingLineNumber = "170"
+            startingLineNumber = "174"
+            endingLineNumber = "174"
             landmarkName = "-tableView:cellForRowAtIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1370,7 +1354,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Newwws/Classes/Home/View/MKPostCell.m"
-            timestampString = "473604256.693266"
+            timestampString = "473690397.667582"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "63"
@@ -1386,11 +1370,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Newwws/Classes/Home/View/MKPhotosView.m"
-            timestampString = "473514366.60444"
+            timestampString = "473693348.124896"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
             landmarkName = "-setPhotos:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1402,11 +1386,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Newwws/Classes/Home/View/MKPhotosView.m"
-            timestampString = "473514506.4016"
+            timestampString = "473693348.124896"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
             landmarkName = "-setPhotos:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1456,22 +1440,6 @@
             startingLineNumber = "40"
             endingLineNumber = "40"
             landmarkName = "-setPhoto:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Newwws/Classes/Home/Model/MKPost.m"
-            timestampString = "473515758.788637"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "14"
-            endingLineNumber = "14"
-            landmarkName = "-objectClassInArray"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1658,12 +1626,124 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Newwws/Classes/Home/View/MKPostCell.m"
-            timestampString = "473605363.256221"
+            timestampString = "473690397.667582"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "38"
             endingLineNumber = "38"
             landmarkName = "-initWithStyle:reuseIdentifier:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Newwws/Classes/Home/Controller/myNewsViewController.m"
+            timestampString = "473685687.905177"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
+            landmarkName = "-headerRefreshing"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Newwws/Classes/Home/Controller/myNewsViewController.m"
+            timestampString = "473685881.20247"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
+            landmarkName = "-headerRefreshing"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Newwws/Classes/Home/Controller/myNewsViewController.m"
+            timestampString = "473693348.124896"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "113"
+            endingLineNumber = "113"
+            landmarkName = "-headerRefreshing"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Newwws/Classes/Home/View/MKPhotosView.m"
+            timestampString = "473693348.124896"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
+            landmarkName = "-setPhotos:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Newwws/Classes/Home/Controller/publishViewController.m"
+            timestampString = "473693986.961274"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "238"
+            endingLineNumber = "238"
+            landmarkName = "-publishNews:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Newwws/Classes/Home/Controller/publishViewController.m"
+            timestampString = "473694457.364348"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "203"
+            endingLineNumber = "203"
+            landmarkName = "-publishImagePost:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Newwws/Classes/Home/Controller/publishViewController.m"
+            timestampString = "473694463.917679"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
+            landmarkName = "-publishTextPost"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

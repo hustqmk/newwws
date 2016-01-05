@@ -11,4 +11,6 @@
 @interface MKPhoto : NSObject
 
 @property (nonatomic, copy) NSString * thumbnail_pic;
+
+@property (nonatomic, copy) NSString * pic;
 @end
