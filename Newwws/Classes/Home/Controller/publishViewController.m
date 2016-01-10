@@ -13,6 +13,7 @@
 #import "ELCImagePicker/ELCImagePickerController.h"
 #import "ELCImagePicker/ELCAlbumPickerController.h"
 #import "MKConst.h"
+#import "SVProgressHUD.h"
 
 @interface publishViewController ()
 
@@ -150,6 +151,7 @@
         NSLog(@"Task1 Done");
     } progress:^(NSUInteger index, CGFloat progress) {
         NSLog(@"%f",progress);
+        [SVProgressHUD showProgress:progress status:@"上传中，请等待!"];
     }];
     
     dispatch_group_enter(databaseGroup);
@@ -229,7 +231,7 @@
             UIImage * image = [self.chooseImages objectAtIndex:index];
             NSString * imageName = [self.chooseImageNames objectAtIndex:index];
             NSDictionary * dict = [[NSDictionary alloc] initWithObjectsAndKeys:imageName,@"filename",
-            UIImageJPEGRepresentation(image, 0.7),@"data",nil];
+            UIImageJPEGRepresentation(image, IMAGE_COMPRESSION_RATIO),@"data",nil];
             [imageToDataBase addObject:dict];
         }
         // submit to database

@@ -13,15 +13,17 @@
 #define NEWS_TABLE_NAME         @"newsPub"
 #define DEFAULT_NEWS_NUMBER     10
 #define NEWS_CONTENT            @"text"
-#define USERNAME                @"userName"
+#define USERNAME                @"username"
 #define NEWSID                   @"newsID"
 #define IMAGES                  @"images"
 #define THUMBIMAGES             @"thumbImages"
 #define CREATEDAT               @"createdAt"
 #define UPDATEDAT               @"updatedAt"
+#define HEADERIMAGE             @"headerImage"
 
 #define MKImageUrlPara @"?t=1&a=20e6e80eeb5a6a4c52465eadef5d2a4e"
 
+#define IMAGE_COMPRESSION_RATIO   0.7
 // 获取RGB颜色
 #define MKColor(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
 #endif /* MKConst_h */

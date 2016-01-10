@@ -92,6 +92,13 @@
 		DF8D72081C3BFC920013A2AC /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = DF8D72031C3BFC920013A2AC /* SVIndefiniteAnimatedView.m */; };
 		DF8D72091C3BFC920013A2AC /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DF8D72051C3BFC920013A2AC /* SVProgressHUD.bundle */; };
 		DF8D720A1C3BFC920013A2AC /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = DF8D72071C3BFC920013A2AC /* SVProgressHUD.m */; };
+		DF9673B41C40B5F10067EE76 /* forgetPassWardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF9673A91C40B5F10067EE76 /* forgetPassWardViewController.m */; };
+		DF9673B51C40B5F10067EE76 /* MMZCHMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF9673AB1C40B5F10067EE76 /* MMZCHMViewController.m */; };
+		DF9673B61C40B5F10067EE76 /* LogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF9673AD1C40B5F10067EE76 /* LogViewController.m */; };
+		DF9673B71C40B5F10067EE76 /* newPassWardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF9673AF1C40B5F10067EE76 /* newPassWardViewController.m */; };
+		DF9673B81C40B5F10067EE76 /* settingPassWardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF9673B11C40B5F10067EE76 /* settingPassWardViewController.m */; };
+		DF9673B91C40B5F10067EE76 /* settinhHeaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF9673B31C40B5F10067EE76 /* settinhHeaderViewController.m */; };
+		DF9673BC1C40BFEB0067EE76 /* homeTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF9673BB1C40BFEB0067EE76 /* homeTabBarController.m */; };
 		DFD6BA7A1C3AB6410072AB9F /* UIImage+Extend.m in Sources */ = {isa = PBXBuildFile; fileRef = DFD6BA711C3AB6410072AB9F /* UIImage+Extend.m */; };
 		DFE6C7D51C390C2800C4683E /* MKPostCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DFE6C7D41C390C2800C4683E /* MKPostCell.m */; };
 		DFEF2F631B75A9A0006342C9 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFEF2F621B75A9A0006342C9 /* CoreLocation.framework */; };
@@ -253,6 +260,20 @@
 		DF8D72051C3BFC920013A2AC /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
 		DF8D72061C3BFC920013A2AC /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
 		DF8D72071C3BFC920013A2AC /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
+		DF9673A81C40B5F10067EE76 /* forgetPassWardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = forgetPassWardViewController.h; sourceTree = "<group>"; };
+		DF9673A91C40B5F10067EE76 /* forgetPassWardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = forgetPassWardViewController.m; sourceTree = "<group>"; };
+		DF9673AA1C40B5F10067EE76 /* MMZCHMViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMZCHMViewController.h; sourceTree = "<group>"; };
+		DF9673AB1C40B5F10067EE76 /* MMZCHMViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMZCHMViewController.m; sourceTree = "<group>"; };
+		DF9673AC1C40B5F10067EE76 /* LogViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogViewController.h; sourceTree = "<group>"; };
+		DF9673AD1C40B5F10067EE76 /* LogViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogViewController.m; sourceTree = "<group>"; };
+		DF9673AE1C40B5F10067EE76 /* newPassWardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = newPassWardViewController.h; sourceTree = "<group>"; };
+		DF9673AF1C40B5F10067EE76 /* newPassWardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = newPassWardViewController.m; sourceTree = "<group>"; };
+		DF9673B01C40B5F10067EE76 /* settingPassWardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = settingPassWardViewController.h; sourceTree = "<group>"; };
+		DF9673B11C40B5F10067EE76 /* settingPassWardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = settingPassWardViewController.m; sourceTree = "<group>"; };
+		DF9673B21C40B5F10067EE76 /* settinhHeaderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = settinhHeaderViewController.h; sourceTree = "<group>"; };
+		DF9673B31C40B5F10067EE76 /* settinhHeaderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = settinhHeaderViewController.m; sourceTree = "<group>"; };
+		DF9673BA1C40BFEB0067EE76 /* homeTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = homeTabBarController.h; path = Newwws/Classes/Home/Controller/homeTabBarController.h; sourceTree = SOURCE_ROOT; };
+		DF9673BB1C40BFEB0067EE76 /* homeTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = homeTabBarController.m; path = Newwws/Classes/Home/Controller/homeTabBarController.m; sourceTree = SOURCE_ROOT; };
 		DFD6BA701C3AB6410072AB9F /* UIImage+Extend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Extend.h"; sourceTree = SOURCE_ROOT; };
 		DFD6BA711C3AB6410072AB9F /* UIImage+Extend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Extend.m"; sourceTree = SOURCE_ROOT; };
 		DFE6C7D21C38BDAF00C4683E /* MKConst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MKConst.h; path = Newwws/other/MKConst.h; sourceTree = SOURCE_ROOT; };
@@ -577,6 +598,8 @@
 		DF81C4D91C317F1500A5016D /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				DF9673BA1C40BFEB0067EE76 /* homeTabBarController.h */,
+				DF9673BB1C40BFEB0067EE76 /* homeTabBarController.m */,
 				DF81C4DA1C317F1500A5016D /* myNewsViewController.h */,
 				DF81C4DB1C317F1500A5016D /* myNewsViewController.m */,
 				DF81C4DC1C317F1500A5016D /* publishViewController.h */,
@@ -647,6 +670,18 @@
 		DF81C4FA1C317F4700A5016D /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				DF9673A81C40B5F10067EE76 /* forgetPassWardViewController.h */,
+				DF9673A91C40B5F10067EE76 /* forgetPassWardViewController.m */,
+				DF9673AA1C40B5F10067EE76 /* MMZCHMViewController.h */,
+				DF9673AB1C40B5F10067EE76 /* MMZCHMViewController.m */,
+				DF9673AC1C40B5F10067EE76 /* LogViewController.h */,
+				DF9673AD1C40B5F10067EE76 /* LogViewController.m */,
+				DF9673AE1C40B5F10067EE76 /* newPassWardViewController.h */,
+				DF9673AF1C40B5F10067EE76 /* newPassWardViewController.m */,
+				DF9673B01C40B5F10067EE76 /* settingPassWardViewController.h */,
+				DF9673B11C40B5F10067EE76 /* settingPassWardViewController.m */,
+				DF9673B21C40B5F10067EE76 /* settinhHeaderViewController.h */,
+				DF9673B31C40B5F10067EE76 /* settinhHeaderViewController.m */,
 				DF81C4FB1C317F4700A5016D /* loginViewController.h */,
 				DF81C4FC1C317F4700A5016D /* loginViewController.m */,
 				DF81C4FD1C317F4700A5016D /* registerViewController.h */,
@@ -829,6 +864,7 @@
 				DF81C4CB1C317E8300A5016D /* SDImageCache.m in Sources */,
 				DF8D71F41C3BF3460013A2AC /* MJPhoto.m in Sources */,
 				DF81C4B51C317E8300A5016D /* ELCAlbumPickerController.m in Sources */,
+				DF9673B91C40B5F10067EE76 /* settinhHeaderViewController.m in Sources */,
 				DF81C4B81C317E8300A5016D /* ELCAssetTablePicker.m in Sources */,
 				DF81C4C81C317E8300A5016D /* UIView+MJExtension.m in Sources */,
 				DF81C4CA1C317E8300A5016D /* NSData+ImageContentType.m in Sources */,
@@ -839,6 +875,8 @@
 				DF8D71F61C3BF3460013A2AC /* MJPhotoBrowser.m in Sources */,
 				DF81C4C51C317E8300A5016D /* MJRefreshHeaderView.m in Sources */,
 				DF81C4D51C317E8300A5016D /* UIImage+WebP.m in Sources */,
+				DF9673B71C40B5F10067EE76 /* newPassWardViewController.m in Sources */,
+				DF9673B51C40B5F10067EE76 /* MMZCHMViewController.m in Sources */,
 				DF81C4B91C317E8300A5016D /* ELCConsole.m in Sources */,
 				DF81C4EE1C317F1500A5016D /* MKPhoto.m in Sources */,
 				DF81C4D41C317E8300A5016D /* UIImage+MultiFormat.m in Sources */,
@@ -846,6 +884,7 @@
 				DF81C4CD1C317E8300A5016D /* SDWebImageDecoder.m in Sources */,
 				DF81C4EF1C317F1500A5016D /* MKPost.m in Sources */,
 				DF8D72081C3BFC920013A2AC /* SVIndefiniteAnimatedView.m in Sources */,
+				DF9673B81C40B5F10067EE76 /* settingPassWardViewController.m in Sources */,
 				DF81C50A1C3184FA00A5016D /* utility.m in Sources */,
 				DF81C5011C317F4700A5016D /* loginViewController.m in Sources */,
 				DF81C4D11C317E8300A5016D /* SDWebImagePrefetcher.m in Sources */,
@@ -864,11 +903,14 @@
 				DF81C4C41C317E8300A5016D /* MJRefreshFooterView.m in Sources */,
 				DF81C5021C317F4700A5016D /* registerViewController.m in Sources */,
 				DF81C4EC1C317F1500A5016D /* myNewsViewController.m in Sources */,
+				DF9673BC1C40BFEB0067EE76 /* homeTabBarController.m in Sources */,
 				DF81C4D01C317E8300A5016D /* SDWebImageManager.m in Sources */,
 				DF81C4681C317C8B00A5016D /* main.m in Sources */,
 				DF81C4CC1C317E8300A5016D /* SDWebImageCompat.m in Sources */,
 				DF81C4BA1C317E8300A5016D /* ELCImagePickerController.m in Sources */,
+				DF9673B41C40B5F10067EE76 /* forgetPassWardViewController.m in Sources */,
 				DF81C4651C317C8B00A5016D /* AppDelegate.m in Sources */,
+				DF9673B61C40B5F10067EE76 /* LogViewController.m in Sources */,
 				DF81C4BB1C317E8300A5016D /* ELCOverlayImageView.m in Sources */,
 				DF81C4CF1C317E8300A5016D /* SDWebImageDownloaderOperation.m in Sources */,
 				DF8D71F81C3BF3460013A2AC /* MJPhotoProgressView.m in Sources */,
