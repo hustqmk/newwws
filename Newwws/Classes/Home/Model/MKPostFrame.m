@@ -18,6 +18,8 @@
 {
     _post = post;
     
+    MKUser * user = post.user;
+    
     // cell 的宽度
     CGFloat cellW = [UIScreen mainScreen].bounds.size.width - MKPostPadding;
     
@@ -34,7 +36,7 @@
     // 2. 昵称
     CGFloat nameX = CGRectGetMaxX(_iconViewF) + MKPostPadding;
     CGFloat nameY = iconXY;
-    CGSize nameSize = [_post.user sizeWithFont:[UIFont systemFontOfSize:MKPostNameFont]];
+    CGSize nameSize = [user.name sizeWithFont:[UIFont systemFontOfSize:MKPostNameFont]];
     _nameBtnF = (CGRect){nameX,nameY,nameSize};
 
     // 3. 时间

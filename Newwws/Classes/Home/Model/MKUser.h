@@ -15,4 +15,6 @@
 @property (nonatomic, copy) NSString *profile_image_url;
 /** 昵称 */
 @property (nonatomic, copy) NSString *name;
+/** 手机号 */
+@property (nonatomic, copy) NSString *phoneNumber;
 @end

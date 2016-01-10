@@ -13,7 +13,7 @@
 #import "MKConst.h"
 #import "MKPost.h"
 #import "UIImage+Extend.h"
-
+#import "MKUser.h"
 
 @class MKPhotosView;
 @interface MKPostTopView()
@@ -83,14 +83,15 @@
     _postFrame = postFrame;
     
     MKPost * post = postFrame.post;
+    MKUser * user = postFrame.post.user;
     
     // set user header image
-    NSArray *userImage = @[@"1",@"2",@"3",@"4"];
+    [self.iconView sd_setImageWithURL:[NSURL URLWithString:user.profile_image_url]
+                     placeholderImage:[UIImage imageNamed:@"avatar_default_small"]];
     self.iconView.frame = postFrame.iconViewF;
-    self.iconView.image = [UIImage resizedImageWithName:userImage[rand()%4]];
     
     // nike name
-    [self.nameBtn setTitle:post.user forState:UIControlStateNormal];
+    [self.nameBtn setTitle:user.name forState:UIControlStateNormal];
     self.nameBtn.frame = postFrame.nameBtnF;
     [self.nameBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     

@@ -64,23 +64,6 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void) savePost: (NSUInteger)postID withImage:(NSArray *) imageName withThumbImage:(NSArray *) thumbImage
-{
-
-    // 1. save to image table
-    NSNumber * newID = [[NSNumber alloc] initWithInteger:postID];
-    BmobObject *imagebb = [BmobObject objectWithClassName:@"image"];
-    [imagebb setObject:newID forKey:@"newsID"];
-    [imagebb setObject:imageName forKey:@"imageName"];
-    [imagebb saveInBackground];
-    
-    // 2. save to thumbnail table
-    BmobObject *imageThumbbb = [BmobObject objectWithClassName:@"thumbImage"];
-    [imagebb setObject:newID forKey:@"newsID"];
-    [imagebb setObject:imageName forKey:@"imageName"];
-    [imagebb saveInBackground];
-}
-
 -(void) publishTextPost
 {
     // record the error info
@@ -117,7 +100,7 @@
         NSLog(@"Task2 Done");
     }];
 }
--(void) publishImagePost: (NSArray *) imageDict
+-(void) publishImagePost: (NSArray *) imageDict withThumb: (NSArray *) thumbImageDict
 {
     // record the error info
     __block NSError * postError = nil;
@@ -131,14 +114,22 @@
     dispatch_group_t databaseGroup = dispatch_group_create();
     dispatch_group_t thumbImageGroup = dispatch_group_create();
     
+//    for (NSDictionary *image in imageDict) {
+//        [imageNameArray addObject:[image objectForKey:@"filename"]];
+//    }
     //create the dispatch group
     // start first database connection, store the
     dispatch_group_enter(databaseGroup);
     [BmobProFile uploadFilesWithDatas:imageDict resultBlock:^(NSArray *filenameArray, NSArray *urlArray, NSArray *bmobFileArray, NSError *error) {
         if (error) {
             postError = error;
+            NSLog(@"%@",error);
         }
         else{
+            NSLog(@"fileArray %@ urlArray %@",filenameArray,urlArray);
+            for (BmobFile* bmobFile in bmobFileArray ) {
+                NSLog(@"%@",bmobFile);
+            }
             for (NSString * fileName in filenameArray) {
                 [imageNameArray addObject:fileName];
             }
@@ -150,8 +141,8 @@
         dispatch_group_leave(databaseGroup);
         NSLog(@"Task1 Done");
     } progress:^(NSUInteger index, CGFloat progress) {
-        NSLog(@"%f",progress);
-        [SVProgressHUD showProgress:progress status:@"上传中，请等待!"];
+        [SVProgressHUD showProgress:progress status:@"图片上传中，请稍候！"];
+         NSLog(@"index %lu progress %f",(unsigned long)index,progress);
     }];
     
     dispatch_group_enter(databaseGroup);
@@ -162,6 +153,7 @@
         dispatch_group_leave(databaseGroup);
         if (error) {
             postError = error;
+            NSLog(@"%@",error);
         }
         else {
             if ([array count] == 1) {
@@ -175,26 +167,48 @@
         NSLog(@"Task2 Done");
     }];
     
-
-    dispatch_group_enter(thumbImageGroup);
-    __block NSMutableArray * thumbImageNames = [[NSMutableArray alloc] initWithCapacity:[imageNameArray count]];
-    dispatch_group_notify(databaseGroup, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        // ask to generate the thumbnail image
-        for (NSString *imageName in imageNameArray) {
-            dispatch_group_enter(thumbImageGroup);
-            [BmobProFile thumbnailImageWithFilename:imageName ruleID:1 resultBlock:^(BOOL isSuccessful, NSError *error, NSString *filename, NSString *url, BmobFile *file) {
-                if(error){
-                    NSLog(@"%@",error);
-                }else{
-                    dispatch_group_leave(thumbImageGroup);
-                    [thumbUrlArray addObject:url];
-                    
-                }
-            }];
+    dispatch_group_enter(databaseGroup);
+    [BmobProFile uploadFilesWithDatas:thumbImageDict resultBlock:^(NSArray *filenameArray, NSArray *urlArray, NSArray *bmobFileArray, NSError *error) {
+        if (error) {
+            postError = error;
+            NSLog(@"%@",error);
         }
-        dispatch_group_leave(thumbImageGroup);
-    });
-    dispatch_group_notify(thumbImageGroup, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        else{
+            NSLog(@"fileArray %@ urlArray %@",filenameArray,urlArray);
+            for (NSString * fileName in urlArray) {
+                [thumbUrlArray addObject:fileName];
+            }
+        }
+        dispatch_group_leave(databaseGroup);
+        NSLog(@"Task1 Done");
+    } progress:^(NSUInteger index, CGFloat progress) {
+        NSLog(@"index %lu progress %f",(unsigned long)index,progress);
+    }];
+    
+//    dispatch_group_enter(thumbImageGroup);
+//    __block NSMutableArray * thumbImageNames = [[NSMutableArray alloc] initWithCapacity:[imageNameArray count]];
+//    dispatch_group_notify(databaseGroup, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+//        // ask to generate the thumbnail image
+//        for (NSString *imageName in imageNameArray) {
+//            dispatch_group_enter(thumbImageGroup);
+//            NSLog(@"%@",imageName);
+//            [BmobProFile thumbnailImageWithFilename:imageName ruleID:1 resultBlock:^(BOOL isSuccessful, NSError *error, NSString *filename, NSString *url, BmobFile *file) {
+//                NSLog(@"filename %@",filename);
+//                //缩略图的url地址
+//                NSLog(@"fileUrl  %@",url);
+//                NSLog(@"error    %@",error);
+//                if(error){
+//                    NSLog(@"%@",error);
+//                }else{
+//                    dispatch_group_leave(thumbImageGroup);
+//                    [thumbUrlArray addObject:url];
+//                    
+//                }
+//            }];
+//        }
+//        dispatch_group_leave(thumbImageGroup);
+//    });
+    dispatch_group_notify(databaseGroup, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         // wait util above finish
         maxPostID++;
         NSString * text = self.publishTextView.text;
@@ -202,13 +216,17 @@
         NSNumber * newID = [[NSNumber alloc] initWithInteger:maxPostID];
         BmobObject * newsBB = [BmobObject objectWithClassName:NEWS_TABLE_NAME];
         BmobUser *bUser = [BmobUser getCurrentObject];
+        [newsBB setObject:bUser forKey:USERPOINT];
         [newsBB setObject:newID forKey:NEWSID];
         [newsBB setObject:bUser.username forKey:USERNAME];
         [newsBB setObject:text forKey:NEWS_CONTENT];
         [newsBB setObject:imageUrlArray forKey:IMAGES];
         [newsBB setObject:thumbUrlArray forKey:THUMBIMAGES];
         [newsBB saveInBackgroundWithResultBlock:^(BOOL isSuccessful, NSError *error) {
-            if (error) {
+            if (isSuccessful) {
+                //NSLog(@"%@",error);
+            }
+            else{
                 NSLog(@"%@",error);
             }
         }];
@@ -226,16 +244,21 @@
     {
         NSUInteger imageCount = [self.chooseImages count];
         NSMutableArray * imageToDataBase = [[NSMutableArray alloc] initWithCapacity:imageCount];
+        NSMutableArray * thumbImageToDataBase =[[NSMutableArray alloc] initWithCapacity:imageCount];
         for (NSUInteger index = 0; index < imageCount; index++)
         {
             UIImage * image = [self.chooseImages objectAtIndex:index];
             NSString * imageName = [self.chooseImageNames objectAtIndex:index];
             NSDictionary * dict = [[NSDictionary alloc] initWithObjectsAndKeys:imageName,@"filename",
             UIImageJPEGRepresentation(image, IMAGE_COMPRESSION_RATIO),@"data",nil];
+            UIImage * thumbImage = [self shrinkImage:image toSize:CGSizeMake(250, 250)];
+            NSDictionary * thumbdict = [[NSDictionary alloc] initWithObjectsAndKeys:imageName,@"filename",
+                                   UIImageJPEGRepresentation(thumbImage, IMAGE_COMPRESSION_RATIO),@"data",nil];
             [imageToDataBase addObject:dict];
+            [thumbImageToDataBase addObject:thumbdict];
         }
         // submit to database
-        [self publishImagePost:imageToDataBase];
+        [self publishImagePost:imageToDataBase withThumb:thumbImageToDataBase];
     }
     [self.navigationController popToRootViewControllerAnimated:YES];
 

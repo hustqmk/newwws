@@ -123,9 +123,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		DF3A494F1C32C5B900EC0600 /* libz.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.dylib; path = ../../../../usr/lib/libz.1.dylib; sourceTree = "<group>"; };
-		DF3A49511C32C60E00EC0600 /* libicucore.A.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.A.dylib; path = ../../../../usr/lib/libicucore.A.dylib; sourceTree = "<group>"; };
-		DF3A49531C32C62C00EC0600 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = ../../../../usr/lib/libsqlite3.dylib; sourceTree = "<group>"; };
+		DF3A494F1C32C5B900EC0600 /* libz.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.dylib; path = /usr/lib/libz.1.dylib; sourceTree = "<absolute>"; };
+		DF3A49511C32C60E00EC0600 /* libicucore.A.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.A.dylib; path = /usr/lib/libicucore.A.dylib; sourceTree = "<absolute>"; };
+		DF3A49531C32C62C00EC0600 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = /usr/lib/libsqlite3.dylib; sourceTree = "<absolute>"; };
 		DF3A49551C32D3E000EC0600 /* MKPhotosView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKPhotosView.h; sourceTree = "<group>"; };
 		DF3A49561C32D3E000EC0600 /* MKPhotosView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKPhotosView.m; sourceTree = "<group>"; };
 		DF587F231B2B00FA009AB71A /* Newwws.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Newwws.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -235,7 +235,7 @@
 		DF81C5061C3184FA00A5016D /* bmobOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = bmobOperation.m; path = Newwws/tools/bmobOperation.m; sourceTree = SOURCE_ROOT; };
 		DF81C5071C3184FA00A5016D /* utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = utility.h; path = Newwws/tools/utility.h; sourceTree = SOURCE_ROOT; };
 		DF81C5081C3184FA00A5016D /* utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = utility.m; path = Newwws/tools/utility.m; sourceTree = SOURCE_ROOT; };
-		DF81C50B1C31851F00A5016D /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		DF81C50B1C31851F00A5016D /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
 		DF81C50D1C31860900A5016D /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = SOURCE_ROOT; };
 		DF8D71E51C3BF3460013A2AC /* MJPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPhoto.h; sourceTree = "<group>"; };
 		DF8D71E61C3BF3460013A2AC /* MJPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJPhoto.m; sourceTree = "<group>"; };
@@ -337,6 +337,10 @@
 		DF2CB5551C31729D00F837DB /* Framework */ = {
 			isa = PBXGroup;
 			children = (
+				DF3A49531C32C62C00EC0600 /* libsqlite3.dylib */,
+				DF3A49511C32C60E00EC0600 /* libicucore.A.dylib */,
+				DF3A494F1C32C5B900EC0600 /* libz.1.dylib */,
+				DF8D71FE1C3BFA5C0013A2AC /* Foundation.framework */,
 				DF8D71FC1C3BFA3E0013A2AC /* UIKit.framework */,
 				DF81C5031C3184A000A5016D /* BmobSDK.framework */,
 				DF6F06BE1C26A2AE007D027F /* AssetsLibrary.framework */,
@@ -429,11 +433,6 @@
 		DF587F1A1B2B00FA009AB71A = {
 			isa = PBXGroup;
 			children = (
-				DF8D71FE1C3BFA5C0013A2AC /* Foundation.framework */,
-				DF3A49531C32C62C00EC0600 /* libsqlite3.dylib */,
-				DF3A49511C32C60E00EC0600 /* libicucore.A.dylib */,
-				DF3A494F1C32C5B900EC0600 /* libz.1.dylib */,
-				DF81C50B1C31851F00A5016D /* Default-568h@2x.png */,
 				DF2CB5551C31729D00F837DB /* Framework */,
 				DF587F251B2B00FA009AB71A /* Newwws */,
 				DF587F3F1B2B00FA009AB71A /* NewwwsTests */,
@@ -465,6 +464,7 @@
 		DF587F261B2B00FA009AB71A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				DF81C50B1C31851F00A5016D /* Default-568h@2x.png */,
 				DF81C4621C317C8B00A5016D /* Info.plist */,
 				DF81C50D1C31860900A5016D /* Main.storyboard */,
 				DF81C45F1C317C8B00A5016D /* AppDelegate.h */,

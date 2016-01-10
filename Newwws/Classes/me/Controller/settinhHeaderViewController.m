@@ -223,12 +223,17 @@
             BmobUser * bUser = [BmobUser getCurrentUser];
             [bUser setObject:url forKey:HEADERIMAGE];
             [bUser updateInBackgroundWithResultBlock:^(BOOL isSuccessful, NSError *error) {
-                [SVProgressHUD showInfoWithStatus:@"上传完毕"];
+                if (isSuccessful) {
+                    [SVProgressHUD showInfoWithStatus:@"上传完毕"];
+                }else{
+                    NSLog(@"%@",error);
+                }
+
             }];
         }
     } progress:^(CGFloat progress) {
         NSLog(@"%f",progress);
-        [SVProgressHUD showProgress:progress status:@"头像上传中。。。"];
+        //[SVProgressHUD showProgress:progress status:@"头像上传中。。。"];
     }];
 }
 

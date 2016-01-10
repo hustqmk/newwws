@@ -8,13 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
-@class XXUser;
+@class MKUser;
 
 @interface MKPost : NSObject
 /** Post id */
 @property (nonatomic, copy) NSString *post_id;
 /** 作者 */
-@property (nonatomic, strong) NSString *user;
+@property (nonatomic, strong)  MKUser *user;
 /** 时间 */
 @property (nonatomic, copy) NSString *created_at;
 /** 正文 */

@@ -14,6 +14,8 @@
 #import "MJRefresh.h"
 #import "MKPostCell.h"
 #import "MKPhoto.h"
+#import "MKUser.h"
+
 @interface myNewsViewController ()
 @property (strong, nonatomic) IBOutletCollection(UITextField) NSArray *theNewField;
 @property (strong, nonatomic) NSMutableArray * newsData;
@@ -78,6 +80,7 @@ static NSString * const NEWS_TEXT = @"text";
     BmobQuery *bQuery = [BmobQuery queryWithClassName:NEWS_TABLE_NAME];
     [bQuery setLimit:DEFAULT_NEWS_NUMBER];
     [bQuery orderByDescending:CREATEDAT];
+    [bQuery includeKey:USERPOINT];
     [bQuery findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
         [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
         [self.myNewsTableView headerEndRefreshing];
@@ -86,7 +89,18 @@ static NSString * const NEWS_TEXT = @"text";
             MKPost * myPost = [[MKPost alloc] init];
             myPost.post_id = [obj objectForKey:NEWSID];
             myPost.text = [obj objectForKey:NEWS_CONTENT];
-            myPost.user = [obj objectForKey:USERNAME];
+            //myPost.user = [obj objectForKey:USERNAME];
+            BmobUser * bUser = [obj objectForKey:USERPOINT];
+            MKUser * user = [[MKUser alloc]init];
+            NSString * imageUrlFromServer =[bUser objectForKey:HEADERIMAGE];
+            if (imageUrlFromServer) {
+                NSMutableString * header_image_url = [[NSMutableString alloc]initWithCapacity:256];
+                [header_image_url appendString:[bUser objectForKey:HEADERIMAGE]];
+                [header_image_url appendString:MKImageUrlPara];
+                user.profile_image_url = header_image_url;
+            }
+            user.name = [bUser objectForKey:USERNAME];
+            myPost.user = user;
             myPost.created_at = [obj objectForKey:CREATEDAT];
             NSArray * thumbimage_array = [obj objectForKey:THUMBIMAGES];
             NSArray * image_array = [obj objectForKey:IMAGES];

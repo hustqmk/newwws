@@ -14,12 +14,14 @@
 #define DEFAULT_NEWS_NUMBER     10
 #define NEWS_CONTENT            @"text"
 #define USERNAME                @"username"
-#define NEWSID                   @"newsID"
+#define NEWSID                  @"newsID"
 #define IMAGES                  @"images"
 #define THUMBIMAGES             @"thumbImages"
 #define CREATEDAT               @"createdAt"
 #define UPDATEDAT               @"updatedAt"
 #define HEADERIMAGE             @"headerImage"
+#define USERPOINT               @"userPoint"
+#define PHONENUMBER             @"mobilePhoneNumber"
 
 #define MKImageUrlPara @"?t=1&a=20e6e80eeb5a6a4c52465eadef5d2a4e"
 

@@ -10,6 +10,7 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreGraphics/CGGeometry.h>
+
 // 间距
 #define MKPostPadding 10
 // 昵称字体
@@ -22,7 +23,7 @@
 #define MKPostContentFont 14
 
 @class MKPost;
-
+@class MKUser;
 @interface MKPostFrame : NSObject
 
 
@@ -45,5 +46,7 @@
 @property (nonatomic, assign, readonly) CGFloat cellHeight;
 
 @property (nonatomic, strong) MKPost *post;
+
+@property (nonatomic, strong) MKUser *user;
 
 @end

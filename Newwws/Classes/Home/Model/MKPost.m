@@ -8,6 +8,11 @@
 
 #import "MKPost.h"
 #import "MKPhoto.h"
+#import "MKUser.h"
+#import "bmobOperation.h"
+#import "MKConst.h"
+
 @implementation MKPost
+
 
 @end
