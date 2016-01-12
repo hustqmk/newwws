@@ -89,9 +89,10 @@
 		DF8D71FB1C3BF3460013A2AC /* UIImageView+MJWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = DF8D71F31C3BF3460013A2AC /* UIImageView+MJWebCache.m */; };
 		DF8D71FD1C3BFA3E0013A2AC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF8D71FC1C3BFA3E0013A2AC /* UIKit.framework */; };
 		DF8D71FF1C3BFA5C0013A2AC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF8D71FE1C3BFA5C0013A2AC /* Foundation.framework */; };
-		DF8D72081C3BFC920013A2AC /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = DF8D72031C3BFC920013A2AC /* SVIndefiniteAnimatedView.m */; };
-		DF8D72091C3BFC920013A2AC /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DF8D72051C3BFC920013A2AC /* SVProgressHUD.bundle */; };
-		DF8D720A1C3BFC920013A2AC /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = DF8D72071C3BFC920013A2AC /* SVProgressHUD.m */; };
+		DF8F598A1C43E5B100F19159 /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = DF8F59831C43E5B100F19159 /* SVIndefiniteAnimatedView.m */; };
+		DF8F598B1C43E5B100F19159 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DF8F59851C43E5B100F19159 /* SVProgressHUD.bundle */; };
+		DF8F598C1C43E5B100F19159 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = DF8F59871C43E5B100F19159 /* SVProgressHUD.m */; };
+		DF8F598D1C43E5B100F19159 /* SVRadialGradientLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = DF8F59891C43E5B100F19159 /* SVRadialGradientLayer.m */; };
 		DF9673B41C40B5F10067EE76 /* forgetPassWardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF9673A91C40B5F10067EE76 /* forgetPassWardViewController.m */; };
 		DF9673B51C40B5F10067EE76 /* MMZCHMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF9673AB1C40B5F10067EE76 /* MMZCHMViewController.m */; };
 		DF9673B61C40B5F10067EE76 /* LogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF9673AD1C40B5F10067EE76 /* LogViewController.m */; };
@@ -254,12 +255,14 @@
 		DF8D71F31C3BF3460013A2AC /* UIImageView+MJWebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+MJWebCache.m"; sourceTree = "<group>"; };
 		DF8D71FC1C3BFA3E0013A2AC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		DF8D71FE1C3BFA5C0013A2AC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		DF8D72021C3BFC920013A2AC /* SVIndefiniteAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVIndefiniteAnimatedView.h; sourceTree = "<group>"; };
-		DF8D72031C3BFC920013A2AC /* SVIndefiniteAnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVIndefiniteAnimatedView.m; sourceTree = "<group>"; };
-		DF8D72041C3BFC920013A2AC /* SVProgressHUD-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SVProgressHUD-Prefix.pch"; sourceTree = "<group>"; };
-		DF8D72051C3BFC920013A2AC /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
-		DF8D72061C3BFC920013A2AC /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
-		DF8D72071C3BFC920013A2AC /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
+		DF8F59821C43E5B100F19159 /* SVIndefiniteAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVIndefiniteAnimatedView.h; sourceTree = "<group>"; };
+		DF8F59831C43E5B100F19159 /* SVIndefiniteAnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVIndefiniteAnimatedView.m; sourceTree = "<group>"; };
+		DF8F59841C43E5B100F19159 /* SVProgressHUD-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SVProgressHUD-Prefix.pch"; sourceTree = "<group>"; };
+		DF8F59851C43E5B100F19159 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
+		DF8F59861C43E5B100F19159 /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
+		DF8F59871C43E5B100F19159 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
+		DF8F59881C43E5B100F19159 /* SVRadialGradientLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVRadialGradientLayer.h; sourceTree = "<group>"; };
+		DF8F59891C43E5B100F19159 /* SVRadialGradientLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVRadialGradientLayer.m; sourceTree = "<group>"; };
 		DF9673A81C40B5F10067EE76 /* forgetPassWardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = forgetPassWardViewController.h; sourceTree = "<group>"; };
 		DF9673A91C40B5F10067EE76 /* forgetPassWardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = forgetPassWardViewController.m; sourceTree = "<group>"; };
 		DF9673AA1C40B5F10067EE76 /* MMZCHMViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMZCHMViewController.h; sourceTree = "<group>"; };
@@ -732,12 +735,14 @@
 		DF8D72011C3BFC920013A2AC /* SVProgressHUD */ = {
 			isa = PBXGroup;
 			children = (
-				DF8D72021C3BFC920013A2AC /* SVIndefiniteAnimatedView.h */,
-				DF8D72031C3BFC920013A2AC /* SVIndefiniteAnimatedView.m */,
-				DF8D72041C3BFC920013A2AC /* SVProgressHUD-Prefix.pch */,
-				DF8D72051C3BFC920013A2AC /* SVProgressHUD.bundle */,
-				DF8D72061C3BFC920013A2AC /* SVProgressHUD.h */,
-				DF8D72071C3BFC920013A2AC /* SVProgressHUD.m */,
+				DF8F59821C43E5B100F19159 /* SVIndefiniteAnimatedView.h */,
+				DF8F59831C43E5B100F19159 /* SVIndefiniteAnimatedView.m */,
+				DF8F59841C43E5B100F19159 /* SVProgressHUD-Prefix.pch */,
+				DF8F59851C43E5B100F19159 /* SVProgressHUD.bundle */,
+				DF8F59861C43E5B100F19159 /* SVProgressHUD.h */,
+				DF8F59871C43E5B100F19159 /* SVProgressHUD.m */,
+				DF8F59881C43E5B100F19159 /* SVRadialGradientLayer.h */,
+				DF8F59891C43E5B100F19159 /* SVRadialGradientLayer.m */,
 			);
 			path = SVProgressHUD;
 			sourceTree = SOURCE_ROOT;
@@ -839,7 +844,7 @@
 				DF81C50E1C31860900A5016D /* Main.storyboard in Resources */,
 				DF8D71F51C3BF3460013A2AC /* MJPhotoBrowser.bundle in Resources */,
 				DF81C4C01C317E8300A5016D /* Overlay@2x.png in Resources */,
-				DF8D72091C3BFC920013A2AC /* SVProgressHUD.bundle in Resources */,
+				DF8F598B1C43E5B100F19159 /* SVProgressHUD.bundle in Resources */,
 				DF81C4691C317C8B00A5016D /* star.png in Resources */,
 				DF81C4C11C317E8300A5016D /* MJRefresh.bundle in Resources */,
 				DF81C4BF1C317E8300A5016D /* Overlay.png in Resources */,
@@ -870,6 +875,8 @@
 				DF81C4CA1C317E8300A5016D /* NSData+ImageContentType.m in Sources */,
 				DF3A49571C32D3E000EC0600 /* MKPhotosView.m in Sources */,
 				DF81C4F01C317F1500A5016D /* MKPostFrame.m in Sources */,
+				DF8F598D1C43E5B100F19159 /* SVRadialGradientLayer.m in Sources */,
+				DF8F598C1C43E5B100F19159 /* SVProgressHUD.m in Sources */,
 				DF81C4D61C317E8300A5016D /* UIImageView+HighlightedWebCache.m in Sources */,
 				DF81C4F21C317F1500A5016D /* MKPhotoView.m in Sources */,
 				DF8D71F61C3BF3460013A2AC /* MJPhotoBrowser.m in Sources */,
@@ -883,7 +890,6 @@
 				DF8D71FA1C3BF3460013A2AC /* MJPhotoView.m in Sources */,
 				DF81C4CD1C317E8300A5016D /* SDWebImageDecoder.m in Sources */,
 				DF81C4EF1C317F1500A5016D /* MKPost.m in Sources */,
-				DF8D72081C3BFC920013A2AC /* SVIndefiniteAnimatedView.m in Sources */,
 				DF9673B81C40B5F10067EE76 /* settingPassWardViewController.m in Sources */,
 				DF81C50A1C3184FA00A5016D /* utility.m in Sources */,
 				DF81C5011C317F4700A5016D /* loginViewController.m in Sources */,
@@ -891,7 +897,6 @@
 				DF8D71F91C3BF3460013A2AC /* MJPhotoToolbar.m in Sources */,
 				DF81C4F11C317F1500A5016D /* MKUser.m in Sources */,
 				DF8D71F71C3BF3460013A2AC /* MJPhotoLoadingView.m in Sources */,
-				DF8D720A1C3BFC920013A2AC /* SVProgressHUD.m in Sources */,
 				DF81C4D31C317E8300A5016D /* UIImage+GIF.m in Sources */,
 				DF81C4C71C317E8300A5016D /* UIScrollView+MJRefresh.m in Sources */,
 				DF81C4C61C317E8300A5016D /* UIScrollView+MJExtension.m in Sources */,
@@ -910,6 +915,7 @@
 				DF81C4BA1C317E8300A5016D /* ELCImagePickerController.m in Sources */,
 				DF9673B41C40B5F10067EE76 /* forgetPassWardViewController.m in Sources */,
 				DF81C4651C317C8B00A5016D /* AppDelegate.m in Sources */,
+				DF8F598A1C43E5B100F19159 /* SVIndefiniteAnimatedView.m in Sources */,
 				DF9673B61C40B5F10067EE76 /* LogViewController.m in Sources */,
 				DF81C4BB1C317E8300A5016D /* ELCOverlayImageView.m in Sources */,
 				DF81C4CF1C317E8300A5016D /* SDWebImageDownloaderOperation.m in Sources */,

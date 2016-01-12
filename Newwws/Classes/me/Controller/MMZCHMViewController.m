@@ -13,7 +13,7 @@
 #import "settinhHeaderViewController.h"
 #import "bmobOperation.h"
 
-@interface MMZCHMViewController ()
+@interface MMZCHMViewController ()<settinhHeaderDelegate>
 {
     UIView *bgView;
     UITextField *phone;
@@ -51,6 +51,7 @@
     
     
     [self createTextFields];
+    
 }
 
 -(void)clickaddBtn
@@ -233,52 +234,52 @@
 -(void)next
 {
     
-    if ([phone.text isEqualToString:@""])
-    {
-        [SVProgressHUD showInfoWithStatus:@"亲,请输入注册手机号码"];
-        return;
-    }
-    else if (phone.text.length <11)
-    {
-        [SVProgressHUD showInfoWithStatus:@"您输入的手机号码格式不正确"];
-        return;
-    }
-    else if([passward.text isEqualToString:@""])
-    {
-        [SVProgressHUD showInfoWithStatus:@"亲，请输入密码，长度至少为6位"];
-    }
-    else if (passward.text.length < 6)
-    {
-        [SVProgressHUD showInfoWithStatus:@"亲，密码长度至少为6位"];
-    }
-    else if ([code.text isEqualToString:@""])
-    {
-        [SVProgressHUD showInfoWithStatus:@"亲,请输入验证码"];
-        return;
-    }
-    else if (code.text.length != 6)
-    {
-        [SVProgressHUD showInfoWithStatus:@"验证码长度错误,6位验证码"];
-        return;
-    }
-   
-    // 连接服务器，进行注册
-    BmobUser *bUser = [[BmobUser alloc] init];
-    bUser.mobilePhoneNumber = phone.text;
-    bUser.password = passward.text;
-    // 用验证码登录
+//    if ([phone.text isEqualToString:@""])
+//    {
+//        [SVProgressHUD showInfoWithStatus:@"亲,请输入注册手机号码"];
+//        return;
+//    }
+//    else if (phone.text.length <11)
+//    {
+//        [SVProgressHUD showInfoWithStatus:@"您输入的手机号码格式不正确"];
+//        return;
+//    }
+//    else if([passward.text isEqualToString:@""])
+//    {
+//        [SVProgressHUD showInfoWithStatus:@"亲，请输入密码，长度至少为6位"];
+//    }
+//    else if (passward.text.length < 6)
+//    {
+//        [SVProgressHUD showInfoWithStatus:@"亲，密码长度至少为6位"];
+//    }
+//    else if ([code.text isEqualToString:@""])
+//    {
+//        [SVProgressHUD showInfoWithStatus:@"亲,请输入验证码"];
+//        return;
+//    }
+//    else if (code.text.length != 6)
+//    {
+//        [SVProgressHUD showInfoWithStatus:@"验证码长度错误,6位验证码"];
+//        return;
+//    }
+//   
+//    // 连接服务器，进行注册
+//    BmobUser *bUser = [[BmobUser alloc] init];
+//    bUser.mobilePhoneNumber = phone.text;
+//    bUser.password = passward.text;
+//    // 用验证码登录
+//    
+//    [BmobSMS verifySMSCodeInBackgroundWithPhoneNumber:phone.text andSMSCode:code.text resultBlock:^(BOOL isSuccessful, NSError *error) {
+//        if (isSuccessful) {
+//            [self.navigationController pushViewController:[[settinhHeaderViewController alloc]init] animated:YES];
+//        }
+//        else
+//        {
+//            [SVProgressHUD showInfoWithStatus:@"验证码错误"];
+//        }
+//    }];
     
-    [bUser signUpOrLoginInbackgroundWithSMSCode:code.text block:^(BOOL isSuccessful, NSError *error) {
-        if (isSuccessful) {
-            [self.navigationController pushViewController:[[settinhHeaderViewController alloc]init] animated:YES];
-        }
-        else
-        {
-            [SVProgressHUD showInfoWithStatus:@"验证码错误"];
-        }
-    }];
-    
-    //[self.navigationController pushViewController:[[settinhHeaderViewController alloc]init] animated:YES];
+    [self.navigationController pushViewController:[[settinhHeaderViewController alloc]init] animated:YES];
 
 }
 
@@ -316,6 +317,10 @@
     // Dispose of any resources that can be recreated.
 }
 
-
+-(void)Phone:(NSString *)mobilePhone andPasswd:(NSString *)passwd
+{
+    mobilePhone = phone.text;
+    passwd = passward.text;
+}
 
 @end

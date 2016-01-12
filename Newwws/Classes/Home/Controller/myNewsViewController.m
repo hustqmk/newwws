@@ -15,6 +15,7 @@
 #import "MKPostCell.h"
 #import "MKPhoto.h"
 #import "MKUser.h"
+#import "SVProgressHUD.h"
 
 @interface myNewsViewController ()
 @property (strong, nonatomic) IBOutletCollection(UITextField) NSArray *theNewField;
@@ -33,20 +34,19 @@ static NSString * const NEWS_TEXT = @"text";
 @end
 @implementation myNewsViewController
 
-- (void)initNewsData
-{
-    BmobQuery * query = [BmobQuery queryWithClassName:NEWS_TABLE];
-    [query orderByDescending:NEWS_ID];
-    query.limit = 3;
-    [query findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
-        for (BmobObject *obj in array) {
-            News * info = [[News alloc] init];
-            info.text = [obj objectForKey:NEWS_TEXT];
-            [self.newsData addObject:info];
-        }
-        [self.myNewsTableView reloadData];
-    }];
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    [self listen];
+    [self.myNewsTableView addHeaderWithTarget:self action:@selector(headerRefreshing)];
+    [self.myNewsTableView headerBeginRefreshing];
     
+    self.myNewsTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.myNewsTableView.backgroundColor = MKColor(226,226,226);
+    self.myNewsTableView.contentInset = UIEdgeInsetsMake(0,0,MKPostPadding*0.5, 0);
+    // load user data
+    BmobUser * bUser = [BmobUser getCurrentUser];
+    NSLog(@"%@",bUser);
+    [BmobUser logout];
 }
 
 -(void)listen{
@@ -68,96 +68,86 @@ static NSString * const NEWS_TEXT = @"text";
     NSLog(@"didReceiveMessage:%@",message);
     
 }
-- (void) updateMyNews
-{
-    BmobQuery * query = [BmobQuery queryWithClassName:NEWS_TABLE];
-    
-}
 
 -(void) headerRefreshing
 {
-    // 连接服务器，获取最新的数据
-    BmobQuery *bQuery = [BmobQuery queryWithClassName:NEWS_TABLE_NAME];
-    [bQuery setLimit:DEFAULT_NEWS_NUMBER];
-    [bQuery orderByDescending:CREATEDAT];
-    [bQuery includeKey:USERPOINT];
-    [bQuery findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
-        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-        [self.myNewsTableView headerEndRefreshing];
-        NSMutableArray *postFrameArray = [NSMutableArray array];
-        for (BmobObject * obj in array) {
-            MKPost * myPost = [[MKPost alloc] init];
-            myPost.post_id = [obj objectForKey:NEWSID];
-            myPost.text = [obj objectForKey:NEWS_CONTENT];
-            //myPost.user = [obj objectForKey:USERNAME];
-            BmobUser * bUser = [obj objectForKey:USERPOINT];
-            MKUser * user = [[MKUser alloc]init];
-            NSString * imageUrlFromServer =[bUser objectForKey:HEADERIMAGE];
-            if (imageUrlFromServer) {
-                NSMutableString * header_image_url = [[NSMutableString alloc]initWithCapacity:256];
-                [header_image_url appendString:[bUser objectForKey:HEADERIMAGE]];
-                [header_image_url appendString:MKImageUrlPara];
-                user.profile_image_url = header_image_url;
+    BmobUser *bUser = [BmobUser getCurrentUser];
+    if (bUser) {
+        BmobQuery *bQuery = [BmobQuery queryWithClassName:NEWS_TABLE_NAME];
+        [bQuery whereKey:USERNAME equalTo:[bUser objectForKey:USERNAME]];
+        [bQuery setLimit:DEFAULT_NEWS_NUMBER];
+        [bQuery orderByDescending:CREATEDAT];
+        [bQuery includeKey:USERPOINT];
+        [bQuery findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
+            [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+            [self.myNewsTableView headerEndRefreshing];
+            NSMutableArray *postFrameArray = [NSMutableArray array];
+            for (BmobObject * obj in array) {
+                MKPost * myPost = [[MKPost alloc] init];
+                myPost.post_id = [obj objectForKey:NEWSID];
+                myPost.text = [obj objectForKey:NEWS_CONTENT];
+                //myPost.user = [obj objectForKey:USERNAME];
+                BmobUser * bUser = [obj objectForKey:USERPOINT];
+                MKUser * user = [[MKUser alloc]init];
+                NSString * imageUrlFromServer =[bUser objectForKey:HEADERIMAGE];
+                if (imageUrlFromServer) {
+                    NSMutableString * header_image_url = [[NSMutableString alloc]initWithCapacity:256];
+                    [header_image_url appendString:[bUser objectForKey:HEADERIMAGE]];
+                    [header_image_url appendString:MKImageUrlPara];
+                    user.profile_image_url = header_image_url;
+                }
+                user.name = [bUser objectForKey:USERNAME];
+                myPost.user = user;
+                myPost.created_at = [obj objectForKey:CREATEDAT];
+                NSArray * thumbimage_array = [obj objectForKey:THUMBIMAGES];
+                NSArray * image_array = [obj objectForKey:IMAGES];
+                NSMutableArray *thumbpics_url = [[NSMutableArray alloc] initWithCapacity:[thumbimage_array count]];
+                NSMutableArray *image_url = [[NSMutableArray alloc] initWithCapacity:[image_array count]];
+                for (int i = 0; i < [thumbimage_array count]; i++) {
+                    NSMutableString *thumbpics = [[NSMutableString alloc] initWithCapacity:256];
+                    NSMutableString *pics = [[NSMutableString alloc] initWithCapacity:256];
+                    MKPhoto * mp = [[MKPhoto alloc]init];
+                    [thumbpics appendString:thumbimage_array[i]];
+                    [thumbpics appendString:MKImageUrlPara];
+                    [pics appendString:image_array[i]];
+                    [pics appendString:MKImageUrlPara];
+                    mp.thumbnail_pic = thumbpics;
+                    mp.pic = pics;
+                    [thumbpics_url addObject:mp];
+                }
+                for (NSString *url in image_array) {
+                    NSMutableString *pics = [[NSMutableString alloc] initWithCapacity:256];
+                    [pics appendString:url];
+                    [pics appendString:MKImageUrlPara];
+                    [image_url addObject:pics];
+                }
+                myPost.thumbpics_urls = thumbpics_url;
+                myPost.pic_urls = image_url;
+                
+                MKPostFrame * postFrame = [[MKPostFrame alloc] init];
+                postFrame.post = myPost;
+                [postFrameArray addObject:postFrame];
             }
-            user.name = [bUser objectForKey:USERNAME];
-            myPost.user = user;
-            myPost.created_at = [obj objectForKey:CREATEDAT];
-            NSArray * thumbimage_array = [obj objectForKey:THUMBIMAGES];
-            NSArray * image_array = [obj objectForKey:IMAGES];
-            NSMutableArray *thumbpics_url = [[NSMutableArray alloc] initWithCapacity:[thumbimage_array count]];
-            NSMutableArray *image_url = [[NSMutableArray alloc] initWithCapacity:[image_array count]];
-            for (int i = 0; i < [thumbimage_array count]; i++) {
-                NSMutableString *thumbpics = [[NSMutableString alloc] initWithCapacity:256];
-                NSMutableString *pics = [[NSMutableString alloc] initWithCapacity:256];
-                MKPhoto * mp = [[MKPhoto alloc]init];
-                [thumbpics appendString:thumbimage_array[i]];
-                [thumbpics appendString:MKImageUrlPara];
-                [pics appendString:image_array[i]];
-                [pics appendString:MKImageUrlPara];
-                mp.thumbnail_pic = thumbpics;
-                mp.pic = pics;
-                [thumbpics_url addObject:mp];
+            self.postFrame = postFrameArray;
+            [self.myNewsTableView reloadData];
+            if (postFrameArray.count) {
+                [self.myNewsTableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:YES];
             }
-            for (NSString *url in image_array) {
-                NSMutableString *pics = [[NSMutableString alloc] initWithCapacity:256];
-                [pics appendString:url];
-                [pics appendString:MKImageUrlPara];
-                [image_url addObject:pics];
-            }
-            myPost.thumbpics_urls = thumbpics_url;
-            myPost.pic_urls = image_url;
             
-            MKPostFrame * postFrame = [[MKPostFrame alloc] init];
-            postFrame.post = myPost;
-            [postFrameArray addObject:postFrame];
-        }
-        self.postFrame = postFrameArray;
-        [self.myNewsTableView reloadData];
-        if (postFrameArray.count) {
-            [self.myNewsTableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:YES];
-        }
-
-    }];
-}
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    [self listen];
-    // Do any additional setup after loading the view.
-    // get user info
-    _newsData = [[NSMutableArray alloc] initWithCapacity:3];
-    [self initNewsData];
-    [self.myNewsTableView addHeaderWithTarget:self action:@selector(headerRefreshing)];
-    [self.myNewsTableView headerBeginRefreshing];
+        }];
+    }else{
+        [self.myNewsTableView headerEndRefreshing];
+        [SVProgressHUD showWithStatus:@"请先登录！"];
+        [SVProgressHUD dismissWithDelay:2.0];
+    }
+    // 连接服务器，获取最新的数据
     
-    self.myNewsTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    self.myNewsTableView.backgroundColor = MKColor(226,226,226);
-    self.myNewsTableView.contentInset = UIEdgeInsetsMake(0,0,MKPostPadding*0.5, 0);
-    // load user data
 }
+
 
 -(void) viewDidAppear:(BOOL)animated
 {
-    [self updateMyNews];
+
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -189,48 +179,6 @@ static NSString * const NEWS_TEXT = @"text";
     
     return cell;
 }
-/*
--(UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    static NSString * tableName = @"newsTableCell";
-    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:tableName];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:tableName];
-    }
-    if(_newsData && _newsData.count > indexPath.row)
-    {
-        cell.textLabel.text = [_newsData[indexPath.row] valueForKey:@"text"];
-        //cell.detailTextLabel.text = subTitle;
-        NSString * imageName = [_newsData[indexPath.row] valueForKey:@"thumbnailName"];
-        if (imageName != nil) {
-            [BmobProFile downloadFileWithFilename:imageName block:^(BOOL isSuccessful, NSError *error, NSString *filepath) {
-                if (isSuccessful) {
-                    UIImage *image = [UIImage imageWithContentsOfFile:filepath];
-                    cell.imageView.image = image;
-                    cell.imageView.hidden = NO;
-                    [cell setNeedsLayout];
-                }
-            } progress:^(CGFloat progress) {
-                NSLog(@"Download Progress: %f",progress);
-            }];
-        }
-        else
-        {
-            [cell setNeedsLayout];
-        }
-        
-    }
 
-    return cell;
-}*/
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

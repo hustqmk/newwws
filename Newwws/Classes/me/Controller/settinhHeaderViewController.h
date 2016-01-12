@@ -7,6 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+@protocol settinhHeaderDelegate
+-(void)Phone:(NSString *)mobilePhone andPasswd:(NSString *)passwd;
+@end
 
 @interface settinhHeaderViewController : UIViewController
 

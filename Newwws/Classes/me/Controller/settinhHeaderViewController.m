@@ -12,13 +12,15 @@
 #import "bmobOperation.h"
 #import "SVProgressHUD.h"
 
-@interface settinhHeaderViewController ()<UIActionSheetDelegate,UIImagePickerControllerDelegate>
+@interface settinhHeaderViewController ()<UIActionSheetDelegate,UIImagePickerControllerDelegate,UITextFieldDelegate>
 {
     UIView *bgView;
     UITextField *username;   //昵称
+    id<settinhHeaderDelegate> myDelegate;
 }
 @property (nonatomic,strong) UIButton *head; //头像
-
+@property (nonatomic, copy) NSString *phone;
+@property (nonatomic, copy) NSString *passwd;
 @end
 
 @implementation settinhHeaderViewController
@@ -49,7 +51,7 @@
     username=[self createTextFielfFrame:CGRectMake(10, 10, self.view.frame.size.width-20, 30) font:[UIFont systemFontOfSize:14] placeholder:@"请输入昵称"];
     username.textAlignment=UITextAlignmentCenter;
     username.clearButtonMode = UITextFieldViewModeWhileEditing;
-    
+    username.delegate = self;
     
     UIButton *landBtn=[self createButtonFrame:CGRectMake(10, bgView.frame.size.height+bgView.frame.origin.y+30,self.view.frame.size.width-20, 37) backImageName:nil title:@"完成" titleColor:[UIColor whiteColor]  font:[UIFont systemFontOfSize:17] target:self action:@selector(landClick)];
     landBtn.backgroundColor=[UIColor colorWithRed:248/255.0f green:144/255.0f blue:34/255.0f alpha:1];
@@ -68,6 +70,9 @@
         [SVProgressHUD showInfoWithStatus:@"请填写用户名"];
         return;
     }
+    NSString * phone = [[NSString alloc] init];
+    NSString * passws = [[NSString alloc] init];
+    [myDelegate Phone:phone andPasswd:passws];
     BmobUser * bUser = [BmobUser getCurrentUser];
     [bUser setObject:username.text forKey:USERNAME];
     [bUser updateInBackgroundWithResultBlock:^(BOOL isSuccessful, NSError *error) {
@@ -225,6 +230,7 @@
             [bUser updateInBackgroundWithResultBlock:^(BOOL isSuccessful, NSError *error) {
                 if (isSuccessful) {
                     [SVProgressHUD showInfoWithStatus:@"上传完毕"];
+                    [SVProgressHUD dismiss];
                 }else{
                     NSLog(@"%@",error);
                 }
@@ -233,7 +239,7 @@
         }
     } progress:^(CGFloat progress) {
         NSLog(@"%f",progress);
-        //[SVProgressHUD showProgress:progress status:@"头像上传中。。。"];
+        [SVProgressHUD showProgress:progress status:@"头像上传中。。。"];
     }];
 }
 
@@ -286,5 +292,25 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+#pragma mark TextViewDelegate
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    if(textField != nil)
+        [textField becomeFirstResponder];
+}
+
+- (BOOL)textField:(UITextField *)textField
+shouldChangeCharactersInRange:(NSRange)range
+replacementString:(NSString *)string
+{
+    if([string isEqualToString:@"\n"])
+    {
+        [textField resignFirstResponder];
+        return NO;
+    }
+    return YES;
+}
 
 @end

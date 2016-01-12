@@ -138,6 +138,7 @@
             }
             
         }
+        [SVProgressHUD dismiss];
         dispatch_group_leave(databaseGroup);
         NSLog(@"Task1 Done");
     } progress:^(NSUInteger index, CGFloat progress) {
