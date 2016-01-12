@@ -12,15 +12,15 @@
 #import "bmobOperation.h"
 #import "SVProgressHUD.h"
 
+
 @interface settinhHeaderViewController ()<UIActionSheetDelegate,UIImagePickerControllerDelegate,UITextFieldDelegate>
 {
     UIView *bgView;
     UITextField *username;   //昵称
-    id<settinhHeaderDelegate> myDelegate;
+
 }
 @property (nonatomic,strong) UIButton *head; //头像
-@property (nonatomic, copy) NSString *phone;
-@property (nonatomic, copy) NSString *passwd;
+
 @end
 
 @implementation settinhHeaderViewController
@@ -30,7 +30,7 @@
     // Do any additional setup after loading the view.
     self.title=@"注册2/2";
     self.view.backgroundColor=[UIColor colorWithRed:240/255.0f green:240/255.0f blue:240/255.0f alpha:1];
-    UIBarButtonItem *addBtn = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:@selector(clickaddBtn)];
+    UIBarButtonItem *addBtn = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:self action:@selector(clickaddBtn)];
     [addBtn setImage:[UIImage imageNamed:@"goback_back_orange_on"]];
     [addBtn setImageInsets:UIEdgeInsetsMake(0, -15, 0, 15)];
     addBtn.tintColor=[UIColor colorWithRed:248/255.0f green:144/255.0f blue:34/255.0f alpha:1];
@@ -38,6 +38,7 @@
     
     [self createUI];
     [self createTextFields];
+    
 }
 
 -(void)createTextFields
@@ -56,7 +57,8 @@
     UIButton *landBtn=[self createButtonFrame:CGRectMake(10, bgView.frame.size.height+bgView.frame.origin.y+30,self.view.frame.size.width-20, 37) backImageName:nil title:@"完成" titleColor:[UIColor whiteColor]  font:[UIFont systemFontOfSize:17] target:self action:@selector(landClick)];
     landBtn.backgroundColor=[UIColor colorWithRed:248/255.0f green:144/255.0f blue:34/255.0f alpha:1];
     landBtn.layer.cornerRadius=5.0f;
-    
+    landBtn.enabled = YES;
+    landBtn.userInteractionEnabled = YES;
     [bgView addSubview:username];
     
     [self.view addSubview:landBtn];
@@ -70,15 +72,18 @@
         [SVProgressHUD showInfoWithStatus:@"请填写用户名"];
         return;
     }
-    NSString * phone = [[NSString alloc] init];
-    NSString * passws = [[NSString alloc] init];
-    [myDelegate Phone:phone andPasswd:passws];
-    BmobUser * bUser = [BmobUser getCurrentUser];
+    BmobUser * bUser = [[BmobUser alloc]init];
+    bUser.mobilePhoneNumber = self.phone;
+    bUser.password = self.passwd;
     [bUser setObject:username.text forKey:USERNAME];
-    [bUser updateInBackgroundWithResultBlock:^(BOOL isSuccessful, NSError *error) {
-        if (isSuccessful) {
-            [SVProgressHUD showInfoWithStatus:@"恭喜，注册成功"];
+    [bUser signUpOrLoginInbackgroundWithSMSCode:self.smsCode block:^(BOOL isSuccessful, NSError *error) {
+        if (error) {
+            NSLog(@"%@",error);
+        } else {
+            BmobUser *user = [BmobUser getCurrentUser];
+            NSLog(@"%@",user);
             [self.navigationController pushViewController:[[LogViewController alloc]init] animated:YES];
+            
         }
     }];
 }
@@ -229,7 +234,6 @@
             [bUser setObject:url forKey:HEADERIMAGE];
             [bUser updateInBackgroundWithResultBlock:^(BOOL isSuccessful, NSError *error) {
                 if (isSuccessful) {
-                    [SVProgressHUD showInfoWithStatus:@"上传完毕"];
                     [SVProgressHUD dismiss];
                 }else{
                     NSLog(@"%@",error);
@@ -239,7 +243,7 @@
         }
     } progress:^(CGFloat progress) {
         NSLog(@"%f",progress);
-        [SVProgressHUD showProgress:progress status:@"头像上传中。。。"];
+        //[SVProgressHUD showProgress:progress status:@"头像上传中。。。"];
     }];
 }
 

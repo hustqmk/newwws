@@ -39,17 +39,15 @@
     
 //    self.view.backgroundColor=[UIColor colorWithRed:240/255.0f green:240/255.0f blue:240/255.0f alpha:1];
 //    
-   self.title=@"注册1/2";
+    self.title=@"注册1/2";
     self.navigationController.navigationBarHidden = NO;
     [[UINavigationBar appearance] setBarTintColor:[UIColor whiteColor]];
-   self.view.backgroundColor=[UIColor colorWithRed:240/255.0f green:240/255.0f blue:240/255.0f alpha:1];
+    self.view.backgroundColor=[UIColor colorWithRed:240/255.0f green:240/255.0f blue:240/255.0f alpha:1];
     UIBarButtonItem *addBtn = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:@selector(clickaddBtn)];
     [addBtn setImage:[UIImage imageNamed:@"goback_back_orange_on"]];
     [addBtn setImageInsets:UIEdgeInsetsMake(0, -15, 0, 15)];
     addBtn.tintColor=[UIColor colorWithRed:248/255.0f green:144/255.0f blue:34/255.0f alpha:1];
     [self.navigationItem setLeftBarButtonItem:addBtn];
-    
-    
     [self createTextFields];
     
 }
@@ -234,52 +232,55 @@
 -(void)next
 {
     
-//    if ([phone.text isEqualToString:@""])
-//    {
-//        [SVProgressHUD showInfoWithStatus:@"亲,请输入注册手机号码"];
-//        return;
-//    }
-//    else if (phone.text.length <11)
-//    {
-//        [SVProgressHUD showInfoWithStatus:@"您输入的手机号码格式不正确"];
-//        return;
-//    }
-//    else if([passward.text isEqualToString:@""])
-//    {
-//        [SVProgressHUD showInfoWithStatus:@"亲，请输入密码，长度至少为6位"];
-//    }
-//    else if (passward.text.length < 6)
-//    {
-//        [SVProgressHUD showInfoWithStatus:@"亲，密码长度至少为6位"];
-//    }
-//    else if ([code.text isEqualToString:@""])
-//    {
-//        [SVProgressHUD showInfoWithStatus:@"亲,请输入验证码"];
-//        return;
-//    }
-//    else if (code.text.length != 6)
-//    {
-//        [SVProgressHUD showInfoWithStatus:@"验证码长度错误,6位验证码"];
-//        return;
-//    }
-//   
-//    // 连接服务器，进行注册
-//    BmobUser *bUser = [[BmobUser alloc] init];
-//    bUser.mobilePhoneNumber = phone.text;
-//    bUser.password = passward.text;
-//    // 用验证码登录
-//    
-//    [BmobSMS verifySMSCodeInBackgroundWithPhoneNumber:phone.text andSMSCode:code.text resultBlock:^(BOOL isSuccessful, NSError *error) {
-//        if (isSuccessful) {
-//            [self.navigationController pushViewController:[[settinhHeaderViewController alloc]init] animated:YES];
-//        }
-//        else
-//        {
-//            [SVProgressHUD showInfoWithStatus:@"验证码错误"];
-//        }
-//    }];
+    if ([phone.text isEqualToString:@""])
+    {
+        [SVProgressHUD showInfoWithStatus:@"亲,请输入注册手机号码"];
+        return;
+    }
+    else if (phone.text.length <11)
+    {
+        [SVProgressHUD showInfoWithStatus:@"您输入的手机号码格式不正确"];
+        return;
+    }
+    else if([passward.text isEqualToString:@""])
+    {
+        [SVProgressHUD showInfoWithStatus:@"亲，请输入密码，长度至少为6位"];
+    }
+    else if (passward.text.length < 6)
+    {
+        [SVProgressHUD showInfoWithStatus:@"亲，密码长度至少为6位"];
+    }
+    else if ([code.text isEqualToString:@""])
+    {
+        [SVProgressHUD showInfoWithStatus:@"亲,请输入验证码"];
+        return;
+    }
+    else if (code.text.length != 6)
+    {
+        [SVProgressHUD showInfoWithStatus:@"验证码长度错误,6位验证码"];
+        return;
+    }
+   
+    // 连接服务器，进行注册
+    BmobUser *bUser = [[BmobUser alloc] init];
+    bUser.mobilePhoneNumber = phone.text;
+    bUser.password = passward.text;
+    // 用验证码登录
     
-    [self.navigationController pushViewController:[[settinhHeaderViewController alloc]init] animated:YES];
+    [BmobSMS verifySMSCodeInBackgroundWithPhoneNumber:phone.text andSMSCode:code.text resultBlock:^(BOOL isSuccessful, NSError *error) {
+        if (isSuccessful) {
+            settinhHeaderViewController * sc = [[settinhHeaderViewController alloc] init];
+            sc.phone = phone.text;
+            sc.passwd = passward.text;
+            sc.smsCode = code.text;
+            [self.navigationController pushViewController:sc animated:YES];
+        }
+        else
+        {
+            [SVProgressHUD showInfoWithStatus:@"验证码错误"];
+        }
+    }];
+
 
 }
 

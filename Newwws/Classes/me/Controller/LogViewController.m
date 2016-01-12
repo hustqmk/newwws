@@ -81,6 +81,13 @@
         View=[[UIImageView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
         View.image=[UIImage imageNamed:@"bg4"];
         [self.view addSubview:View];
+        
+        UIButton *zhuce =[[UIButton alloc]initWithFrame:CGRectMake(self.view.frame.size.width-60, 30, 50, 30)];
+        [zhuce setTitle:@"注销" forState:UIControlStateNormal];
+        [zhuce setTitleColor:[UIColor colorWithRed:248/255.0f green:144/255.0f blue:34/255.0f alpha:1] forState:UIControlStateNormal];
+        zhuce.font=[UIFont systemFontOfSize:17];
+        [zhuce addTarget:self action:@selector(zhuxiao) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:zhuce];
     }
     else{
         [self createLoginView];
@@ -345,6 +352,11 @@
 -(void)zhuce
 {
     [self.navigationController pushViewController:[[MMZCHMViewController alloc]init] animated:YES];
+}
+
+-(void)zhuxiao
+{
+    [BmobUser logout];
 }
 
 -(void)registration:(UIButton *)button

@@ -12,5 +12,7 @@
 @end
 
 @interface settinhHeaderViewController : UIViewController
-
+@property (nonatomic, copy) NSString *phone;
+@property (nonatomic, copy) NSString *passwd;
+@property (nonatomic, copy) NSString *smsCode;
 @end
