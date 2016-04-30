@@ -11,6 +11,7 @@
 		DF3A49521C32C60E00EC0600 /* libicucore.A.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DF3A49511C32C60E00EC0600 /* libicucore.A.dylib */; };
 		DF3A49541C32C62C00EC0600 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DF3A49531C32C62C00EC0600 /* libsqlite3.dylib */; };
 		DF3A49571C32D3E000EC0600 /* MKPhotosView.m in Sources */ = {isa = PBXBuildFile; fileRef = DF3A49561C32D3E000EC0600 /* MKPhotosView.m */; };
+		DF5FE2031C546238008A3B42 /* SettingUserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF5FE2021C546238008A3B42 /* SettingUserInfoViewController.m */; };
 		DF6F06BF1C26A2AE007D027F /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF6F06BE1C26A2AE007D027F /* AssetsLibrary.framework */; };
 		DF81C4651C317C8B00A5016D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DF81C4601C317C8B00A5016D /* AppDelegate.m */; };
 		DF81C4661C317C8B00A5016D /* images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF81C4611C317C8B00A5016D /* images.xcassets */; };
@@ -62,8 +63,6 @@
 		DF81C4F21C317F1500A5016D /* MKPhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = DF81C4E91C317F1500A5016D /* MKPhotoView.m */; };
 		DF81C4F31C317F1500A5016D /* MKPostTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = DF81C4EB1C317F1500A5016D /* MKPostTopView.m */; };
 		DF81C4F91C317F3400A5016D /* AffairViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF81C4F61C317F3400A5016D /* AffairViewController.m */; };
-		DF81C5011C317F4700A5016D /* loginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF81C4FC1C317F4700A5016D /* loginViewController.m */; };
-		DF81C5021C317F4700A5016D /* registerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF81C4FE1C317F4700A5016D /* registerViewController.m */; };
 		DF81C5041C3184A000A5016D /* BmobSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF81C5031C3184A000A5016D /* BmobSDK.framework */; };
 		DF81C5091C3184FA00A5016D /* bmobOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = DF81C5061C3184FA00A5016D /* bmobOperation.m */; };
 		DF81C50A1C3184FA00A5016D /* utility.m in Sources */ = {isa = PBXBuildFile; fileRef = DF81C5081C3184FA00A5016D /* utility.m */; };
@@ -131,6 +130,8 @@
 		DF3A49561C32D3E000EC0600 /* MKPhotosView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKPhotosView.m; sourceTree = "<group>"; };
 		DF587F231B2B00FA009AB71A /* Newwws.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Newwws.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF587F3C1B2B00FA009AB71A /* Newwws.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Newwws.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF5FE2011C546238008A3B42 /* SettingUserInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingUserInfoViewController.h; sourceTree = "<group>"; };
+		DF5FE2021C546238008A3B42 /* SettingUserInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingUserInfoViewController.m; sourceTree = "<group>"; };
 		DF6F06BE1C26A2AE007D027F /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		DF81C45F1C317C8B00A5016D /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Newwws/Supporting/AppDelegate.h; sourceTree = SOURCE_ROOT; };
 		DF81C4601C317C8B00A5016D /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Newwws/Supporting/AppDelegate.m; sourceTree = SOURCE_ROOT; };
@@ -227,10 +228,6 @@
 		DF81C4EB1C317F1500A5016D /* MKPostTopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKPostTopView.m; sourceTree = "<group>"; };
 		DF81C4F51C317F3400A5016D /* AffairViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AffairViewController.h; sourceTree = "<group>"; };
 		DF81C4F61C317F3400A5016D /* AffairViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AffairViewController.m; sourceTree = "<group>"; };
-		DF81C4FB1C317F4700A5016D /* loginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = loginViewController.h; sourceTree = "<group>"; };
-		DF81C4FC1C317F4700A5016D /* loginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = loginViewController.m; sourceTree = "<group>"; };
-		DF81C4FD1C317F4700A5016D /* registerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = registerViewController.h; sourceTree = "<group>"; };
-		DF81C4FE1C317F4700A5016D /* registerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = registerViewController.m; sourceTree = "<group>"; };
 		DF81C5031C3184A000A5016D /* BmobSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BmobSDK.framework; path = Newwws/Framework/BmobSDK.framework; sourceTree = "<group>"; };
 		DF81C5051C3184FA00A5016D /* bmobOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = bmobOperation.h; path = Newwws/tools/bmobOperation.h; sourceTree = SOURCE_ROOT; };
 		DF81C5061C3184FA00A5016D /* bmobOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = bmobOperation.m; path = Newwws/tools/bmobOperation.m; sourceTree = SOURCE_ROOT; };
@@ -679,16 +676,14 @@
 				DF9673AB1C40B5F10067EE76 /* MMZCHMViewController.m */,
 				DF9673AC1C40B5F10067EE76 /* LogViewController.h */,
 				DF9673AD1C40B5F10067EE76 /* LogViewController.m */,
+				DF5FE2011C546238008A3B42 /* SettingUserInfoViewController.h */,
+				DF5FE2021C546238008A3B42 /* SettingUserInfoViewController.m */,
 				DF9673AE1C40B5F10067EE76 /* newPassWardViewController.h */,
 				DF9673AF1C40B5F10067EE76 /* newPassWardViewController.m */,
 				DF9673B01C40B5F10067EE76 /* settingPassWardViewController.h */,
 				DF9673B11C40B5F10067EE76 /* settingPassWardViewController.m */,
 				DF9673B21C40B5F10067EE76 /* settinhHeaderViewController.h */,
 				DF9673B31C40B5F10067EE76 /* settinhHeaderViewController.m */,
-				DF81C4FB1C317F4700A5016D /* loginViewController.h */,
-				DF81C4FC1C317F4700A5016D /* loginViewController.m */,
-				DF81C4FD1C317F4700A5016D /* registerViewController.h */,
-				DF81C4FE1C317F4700A5016D /* registerViewController.m */,
 			);
 			name = Controller;
 			path = Newwws/Classes/me/Controller;
@@ -892,7 +887,6 @@
 				DF81C4EF1C317F1500A5016D /* MKPost.m in Sources */,
 				DF9673B81C40B5F10067EE76 /* settingPassWardViewController.m in Sources */,
 				DF81C50A1C3184FA00A5016D /* utility.m in Sources */,
-				DF81C5011C317F4700A5016D /* loginViewController.m in Sources */,
 				DF81C4D11C317E8300A5016D /* SDWebImagePrefetcher.m in Sources */,
 				DF8D71F91C3BF3460013A2AC /* MJPhotoToolbar.m in Sources */,
 				DF81C4F11C317F1500A5016D /* MKUser.m in Sources */,
@@ -906,7 +900,6 @@
 				DF81C5091C3184FA00A5016D /* bmobOperation.m in Sources */,
 				DF81C4D71C317E8300A5016D /* UIImageView+WebCache.m in Sources */,
 				DF81C4C41C317E8300A5016D /* MJRefreshFooterView.m in Sources */,
-				DF81C5021C317F4700A5016D /* registerViewController.m in Sources */,
 				DF81C4EC1C317F1500A5016D /* myNewsViewController.m in Sources */,
 				DF9673BC1C40BFEB0067EE76 /* homeTabBarController.m in Sources */,
 				DF81C4D01C317E8300A5016D /* SDWebImageManager.m in Sources */,
@@ -926,6 +919,7 @@
 				DF81C4B61C317E8300A5016D /* ELCAsset.m in Sources */,
 				DF81C4CE1C317E8300A5016D /* SDWebImageDownloader.m in Sources */,
 				DF81C4F91C317F3400A5016D /* AffairViewController.m in Sources */,
+				DF5FE2031C546238008A3B42 /* SettingUserInfoViewController.m in Sources */,
 				DF81C4D21C317E8300A5016D /* UIButton+WebCache.m in Sources */,
 				DF81C4B71C317E8300A5016D /* ELCAssetCell.m in Sources */,
 				DF81C4F31C317F1500A5016D /* MKPostTopView.m in Sources */,
@@ -991,7 +985,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				"HEADER_SEARCH_PATHS[arch=*]" = "$(PROJECT_DIR)/Newwws/other/lib";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -1030,7 +1024,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				"HEADER_SEARCH_PATHS[arch=*]" = "$(PROJECT_DIR)/Newwws/other/lib";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -1048,7 +1042,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Newwws/supporting/info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = Newwws;
@@ -1069,7 +1063,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Newwws/supporting/info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = Newwws;

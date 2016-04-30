@@ -16,6 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"动态";
     _tabString = @[@"发现",@"关注",@"最新"];
     // Do any additional setup after loading the view.
 }

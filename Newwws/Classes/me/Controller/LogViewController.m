@@ -12,6 +12,7 @@
 #import "MMZCHMViewController.h"
 #import "SVProgressHUD.h"
 #import "bmobOperation.h"
+#import "SettingUserInfoViewController.h"
 
 @interface LogViewController ()
 {
@@ -34,7 +35,7 @@
 -(void)viewWillAppear:(BOOL)animated
 {
    //[[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:216/255.0f green:209/255.0f blue:192/255.0f alpha:1]];
-    self.navigationController.navigationBarHidden = YES;
+
 }
 
 -(void) createLoginView
@@ -73,29 +74,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    //[BmobUser logout];
-    BmobUser *bUser = [BmobUser getCurrentUser];
-    
-    if (bUser) {
-        // open user setting interface
-        View=[[UIImageView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
-        View.image=[UIImage imageNamed:@"bg4"];
-        [self.view addSubview:View];
-        
-        UIButton *zhuce =[[UIButton alloc]initWithFrame:CGRectMake(self.view.frame.size.width-60, 30, 50, 30)];
-        [zhuce setTitle:@"注销" forState:UIControlStateNormal];
-        [zhuce setTitleColor:[UIColor colorWithRed:248/255.0f green:144/255.0f blue:34/255.0f alpha:1] forState:UIControlStateNormal];
-        zhuce.font=[UIFont systemFontOfSize:17];
-        [zhuce addTarget:self action:@selector(zhuxiao) forControlEvents:UIControlEventTouchUpInside];
-        [self.view addSubview:zhuce];
-    }
-    else{
-        [self createLoginView];
-    }
-    
-   //[self createLoginView];
+    self.title = @"我";
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+
+}
 -(void)clickaddBtn:(UIButton *)button
 {
     self.view.backgroundColor=[UIColor whiteColor];
@@ -340,9 +325,7 @@
         else
         {
             [SVProgressHUD showInfoWithStatus:@"恭喜，登录成功!"];
-            View=[[UIImageView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
-            View.image=[UIImage imageNamed:@"bg4"];
-            [self.view addSubview:View];
+            [self.navigationController pushViewController:[[SettingUserInfoViewController alloc] init] animated:YES];
         }
     }];
     

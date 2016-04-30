@@ -7,7 +7,10 @@
 //
 
 #import "AppDelegate.h"
-
+#import "myNewsViewController.h"
+#import "AffairViewController.h"
+#import "LogViewController.h"
+#import "SettingUserInfoViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -17,6 +20,25 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window makeKeyAndVisible];
+    
+    myNewsViewController * myNewsController = [[myNewsViewController alloc] init];
+    UINavigationController * myNewsNC = [[UINavigationController alloc] initWithRootViewController:myNewsController];
+    
+    AffairViewController * affairController = [[AffairViewController alloc] init];
+    UINavigationController *affairNC = [[UINavigationController alloc] initWithRootViewController:affairController];
+    
+    LogViewController * logController = [[LogViewController alloc] init];
+    UINavigationController * logNC = [[UINavigationController alloc] initWithRootViewController:logController];
+    
+    NSArray * array = @[myNewsNC,affairNC,logNC];
+    
+    UITabBarController * tabBC = [UITabBarController new];
+    tabBC.viewControllers = array;
+    tabBC.tabBar.tintColor = [UIColor colorWithRed:70 / 255. green:170 / 255. blue:0 alpha:1.0];
+    self.window.rootViewController = tabBC;
     return YES;
 }
 

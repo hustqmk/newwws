@@ -69,6 +69,11 @@
     // record the error info
     __block NSError * postError = nil;
     __block NSUInteger maxPostID;
+    BmobUser * bUser = [BmobUser getCurrentUser];
+    if (!bUser) {
+        [SVProgressHUD showInfoWithStatus:@"请先登录"];
+        return;
+    }
     BmobQuery * query = [BmobQuery queryWithClassName:NEWS_TABLE_NAME];
     [query orderByDescending:NEWSID];
     query.limit = 1;
@@ -91,6 +96,7 @@
             NSNumber * newID = [[NSNumber alloc] initWithInteger:maxPostID];
             BmobObject * newsBB = [BmobObject objectWithClassName:NEWS_TABLE_NAME];
             BmobUser *bUser = [BmobUser getCurrentObject];
+            [newsBB setObject:bUser forKey:USERPOINT];
             [newsBB setObject:newID forKey:NEWSID];
             [newsBB setObject:bUser.username forKey:USERNAME];
             [newsBB setObject:text forKey:NEWS_CONTENT];
@@ -236,6 +242,11 @@
 }
 - (IBAction)publishNews:(id)sender
 {
+    BmobUser * bUser = [BmobUser getCurrentUser];
+    if (!bUser) {
+        [SVProgressHUD showInfoWithStatus:@"请先登录"];
+        return;
+    }
     if ([self.chooseImages count] == 0)
     {
         [self publishTextPost];

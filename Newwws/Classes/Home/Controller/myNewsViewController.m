@@ -34,8 +34,11 @@ static NSString * const NEWS_TEXT = @"text";
 @end
 @implementation myNewsViewController
 
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"我的发布";
     [self listen];
     [self.myNewsTableView addHeaderWithTarget:self action:@selector(headerRefreshing)];
     [self.myNewsTableView headerBeginRefreshing];
@@ -46,7 +49,7 @@ static NSString * const NEWS_TEXT = @"text";
     // load user data
     BmobUser * bUser = [BmobUser getCurrentUser];
     NSLog(@"%@",bUser);
-    [BmobUser logout];
+    //[BmobUser logout];
 }
 
 -(void)listen{
